@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { RiMoonClearFill } from 'react-icons/ri'
 import { FaLightbulb } from 'react-icons/fa'
 
 export default function HeaderToggle() {
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
+
+  const lightIcon = <RiMoonClearFill />
+  const darkIcon = <FaLightbulb />
+  const [icon, setIcon] = useState(lightIcon)
   const body = document.body
 
   const handleClickToggleDarkMode = (event) => {
@@ -12,10 +17,33 @@ export default function HeaderToggle() {
 
     if (isChecked) {
       body.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+      setTheme('dark')
     } else {
       body.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+      setTheme('light')
     }
   }
+
+  const checkTheme = () => {
+    if (!theme) {
+      localStorage.setItem('theme', 'light')
+    }
+    if (theme === 'dark') {
+      body.classList.add('dark')
+      setIcon(darkIcon)
+      setIsDarkMode(true)
+    } else {
+      body.classList.add('light')
+      setIcon(lightIcon)
+      setIsDarkMode(false)
+    }
+  }
+
+  useEffect(() => {
+    checkTheme()
+  }, [])
 
   return (
     <div className='flex flex-col userNoSelect'>
@@ -39,9 +67,7 @@ export default function HeaderToggle() {
             />
           </span>
         </span>
-        <span className='ml-3 text-xl'>
-          {isDarkMode ? <FaLightbulb /> : <RiMoonClearFill />}
-        </span>
+        <span className='ml-3 text-xl'>{icon}</span>
       </label>
     </div>
   )
