@@ -25,7 +25,12 @@ export default function Avatar() {
       ) : (
         <FaRegUserCircle className='block mx-auto text-7xl bg-blue-700 p-1 radius text-gray-100 rounded-full' />
       )}
-      <h1 className='text-center font-semibold mt-4 text-2xl'>{fullName}</h1>
+      <h1
+        className='text-center font-semibold mt-4 text-2xl'
+        title={userConfig.username}
+      >
+        {fullName}
+      </h1>
     </div>
   )
 }
