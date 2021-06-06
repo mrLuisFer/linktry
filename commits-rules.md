@@ -6,20 +6,25 @@ When committing to a branch, Emojis will be used representing a new feature, bug
 
 ## To contribute
 
-Al momento de querer contribuir solo necesitas clonar el repositorio (puedes seguir los pasos en el (README.md)[./README.md])
+When you want to contribute, you only need to clone the repository (you can follow the steps in the (README.md)[./README.md])
 
-Crear una nueva rama con algun titulo descriptivo pero corto
+Create a new branch with some descriptive but short title
 
-Y al momento de realizar tus **commits** puedes hacer uso de los siguientes emojis para especificar de que se trata:
+And when making your **commits** you can make use of the following emojis to specify what it is about:
 
-🐞: _Bug por arreglado o TODO_ -> Fix
+🐞: _Bug fixed o TODO_ -> Fix
 
-✨: _Nueva caracteristica o mejora_ -> Feat
+✨: _New feature o enhancement_ -> Feat
 
-📦: _Algo relacionado al core del proyecto_ -> Core
+📦: _Something related to the core of the project_ -> Core
 
 🏢: -> Build
 
 📔: -> Docs
 
 🖊: -> Refactor
+
+### Reference
+
+U can read more about this, in this page:
+[commit-naming-rules](https://developerexperience.io/practices/commit-naming-rules)
