@@ -16,3 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
 }
+
+html {
+  min-height: 100vh;
+}
