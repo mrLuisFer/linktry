@@ -16,7 +16,7 @@ export default function Avatar() {
         <img src={avatarUrl} alt='' />
       ) : (
         <div>
-          <FaRegUserCircle className='block mx-auto text-7xl bg-blue-900 p-1 radius text-gray-100 rounded-3xl' />
+          <FaRegUserCircle className='block mx-auto text-7xl bg-blue-700 p-1 radius text-gray-100 rounded-full' />
         </div>
       )}
     </div>
