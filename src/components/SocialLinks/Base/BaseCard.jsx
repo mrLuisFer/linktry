@@ -13,23 +13,45 @@ import { HiOutlineExternalLink } from 'react-icons/hi'
 export default function BaseCard({
   username,
   url,
-  description,
+  description = '',
   jsxIcon = <AiFillHeart />,
+  customUsernameClasses = '',
+  customIconClasses = '',
+  customCardClasses = '',
+  customUrlIconClasses = '',
 }) {
   return (
-    <div className='bg-gray-200 dark:bg-gray-700 p-4 rounded-lg transition-shadow hover:shadow-md'>
+    <div
+      className={`bg-gray-200 dark:bg-gray-700 p-4 rounded-lg transition-shadow hover:shadow-md ${customCardClasses}`}
+    >
       <div className='flex gap-x-4'>
-        <div className='text-4xl h-full my-auto mx-0'>{jsxIcon}</div>
+        <div
+          className={`text-4xl h-full my-auto mx-0 transform hover:scale-110 ${customIconClasses}`}
+        >
+          <a href={url} target='_blank' rel='noreferrer'>
+            {jsxIcon}
+          </a>
+        </div>
         <div className='w-full'>
-          <div className='flex justify-between items-center'>
-            <h1 className='font-semibold text-gray-900 text-lg'>@{username}</h1>
+          <div
+            className={`flex justify-between items-center ${
+              description.length > 5 ? '' : 'h-full'
+            }`}
+          >
+            <h1 className={`font-semibold text-lg ${customUsernameClasses}`}>
+              @{username}
+            </h1>
             <a href={url} target='_blank' rel='noreferrer'>
-              <HiOutlineExternalLink className='text-xl transform hover:scale-110' />
+              <HiOutlineExternalLink
+                className={`text-xl transform hover:scale-110 ${customUrlIconClasses}`}
+              />
             </a>
           </div>
-          <div>
+          {description.length > 5 ? (
             <p className='text-sm'>{description}</p>
-          </div>
+          ) : (
+            ''
+          )}
         </div>
       </div>
     </div>
