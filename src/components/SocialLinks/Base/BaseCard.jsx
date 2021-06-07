@@ -1,6 +1,7 @@
 import React from 'react'
 import { AiFillHeart } from 'react-icons/ai'
 import { HiOutlineExternalLink } from 'react-icons/hi'
+import AnchorTag from '../../AnchorTag/AnchorTag'
 
 /**
  *
@@ -28,9 +29,7 @@ export default function BaseCard({
         <div
           className={`text-4xl h-full my-auto mx-0 transform hover:scale-110 ${customIconClasses}`}
         >
-          <a href={url} target='_blank' rel='noreferrer'>
-            {jsxIcon}
-          </a>
+          <AnchorTag hrefUrl={url}>{jsxIcon}</AnchorTag>
         </div>
         <div className='w-full'>
           <div
@@ -41,11 +40,11 @@ export default function BaseCard({
             <h1 className={`font-semibold text-lg ${customUsernameClasses}`}>
               @{username}
             </h1>
-            <a href={url} target='_blank' rel='noreferrer'>
+            <AnchorTag>
               <HiOutlineExternalLink
                 className={`text-xl transform hover:scale-110 ${customUrlIconClasses}`}
               />
-            </a>
+            </AnchorTag>
           </div>
           {description.length > 5 ? (
             <p className='text-sm'>{description}</p>
