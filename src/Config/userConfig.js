@@ -4,15 +4,8 @@ export const userConfig = {
   firstName: 'Luis',
   lastName: 'Alvarez',
   username: 'mrLuisFer',
-  abour: '',
-  socialMedia: [
-    {
-      socialName: 'twitter',
-      username: '_mrLuisFer',
-      url: 'https://twitter.com/home',
-      titleInCard: '',
-      description: '',
-      customAvatarUrl: '',
-    },
-  ],
+  about: '',
+  phoneNumber: '',
+  country: '',
+  university: '',
 }

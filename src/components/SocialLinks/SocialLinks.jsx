@@ -1,23 +1,13 @@
 import React from 'react'
-import { userConfig } from '../../userConfig'
-import { FaTwitter } from 'react-icons/fa'
-import { FaFacebookF } from 'react-icons/fa'
+import BaseCard from './Base/BaseCard'
+import { socialLinks } from '../../Config/socialLinks'
 
 export default function SocialLinks() {
-  const userSocialMedia = userConfig.socialMedia
-  const socialMediaIcons = [
-    {
-      name: 'twitter',
-      component: <FaTwitter />,
-    },
-    { name: 'facebook', component: <FaFacebookF /> },
-  ]
+  const { username, url, description } = socialLinks.twitter
 
-  const [socialName] = userSocialMedia
-
-  const socialIconFounded = socialMediaIcons.find(
-    (socialIcon) => socialIcon.name === socialName
+  return (
+    <div className='mt-5 px-4'>
+      <BaseCard username={username} url={url} description={description} />
+    </div>
   )
-
-  return <div>{socialIconFounded}</div>
 }
