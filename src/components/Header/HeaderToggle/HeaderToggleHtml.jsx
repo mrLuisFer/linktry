@@ -14,8 +14,10 @@ export default function HeaderToggleHtml({
         <span className='relative'>
           <span className='block w-10 h-6 bg-gray-400 rounded-full shadow-inner'></span>
           <span
-            className={`absolute block w-4 h-4 mt-1 ml-1 bg-white rounded-full shadow inset-y-0 left-0 focus-within:shadow-outline transition-transform duration-300 ease-in-out transform
-                ${isDarkMode ? 'translate-x-4' : '-translate-x-0'}
+            className={`absolute block w-4 h-4 mt-1 ml-1 rounded-full shadow inset-y-0 left-0 focus-within:shadow-outline transition-transform duration-300 ease-in-out transform
+                ${isDarkMode ? 'translate-x-4' : '-translate-x-0'} ${
+              isDarkMode ? 'bg-green-300' : 'bg-white'
+            }
             `}
           >
             <input
