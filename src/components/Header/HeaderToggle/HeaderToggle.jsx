@@ -25,7 +25,7 @@ export default function HeaderToggle() {
     } else {
       body.classList.remove('dark')
       localStorage.setItem('theme', 'light')
-      setTheme('')
+      setTheme('light')
       setIcon(lightIcon)
     }
   }
@@ -39,7 +39,7 @@ export default function HeaderToggle() {
       setIcon(darkIcon)
       setIsDarkMode(true)
     } else {
-      body.classList.add('')
+      body.classList.remove('dark')
       setIcon(lightIcon)
       setIsDarkMode(false)
     }

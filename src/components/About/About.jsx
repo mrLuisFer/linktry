@@ -19,13 +19,13 @@ export default function About() {
           <p>About</p>
           <IoIosArrowForward
             className={`transform transition-transform ${
-              showDescription ? 'rotate-90' : 'rotate-0'
+              showDescription ? 'rotate-90' : 'rotate-0 hover:rotate-45'
             }`}
           />
         </div>
         {showDescription ? (
-          <div className='mt-4 text-center px-4'>
-            <p>
+          <div className='mt-1 text-center px-3'>
+            <p className='text-sm'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Perspiciatis, iure. Dolores, velit, aliquam amet sunt dicta nemo
               deleniti iure facilis doloremque enim nobis eligendi ad

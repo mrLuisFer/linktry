@@ -7,9 +7,9 @@ export const userConfig = {
   abour: '',
   socialMedia: [
     {
-      socialName: '',
-      username: '',
-      url: '',
+      socialName: 'twitter',
+      username: '_mrLuisFer',
+      url: 'https://twitter.com/home',
       titleInCard: '',
       description: '',
       customAvatarUrl: '',
