@@ -47,6 +47,7 @@ export default function HeaderToggle() {
 
   useEffect(() => {
     checkTheme()
+    // eslint-disable-next-line
   }, [])
 
   return (

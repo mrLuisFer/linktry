@@ -1,6 +1,21 @@
 import React from 'react'
+import { AiFillHeart } from 'react-icons/ai'
+import { HiOutlineExternalLink } from 'react-icons/hi'
 
-export default function BaseCard({ username, url, description }) {
+/**
+ *
+ * @param {String} username
+ * @param {String} url
+ * @param {String} description
+ * @param {JSX.Element} jsxIcon
+ * @returns JSX.Element
+ */
+export default function BaseCard({
+  username,
+  url,
+  description,
+  jsxIcon = <AiFillHeart />,
+}) {
   const yearDate = new Date().getFullYear()
   const monthDate = new Date().getMonth()
 
@@ -22,13 +37,22 @@ export default function BaseCard({ username, url, description }) {
   const month = MONTHS_NAME[monthDate]
 
   return (
-    <div className='bg-gray-200 dark:bg-gray-700 p-4 pt-1 rounded-lg transition-shadow hover:shadow-xl'>
-      <div className='text-sm'>
-        <span>
-          {yearDate} - {month}
-        </span>
+    <div className='bg-gray-200 dark:bg-gray-700 p-4 rounded-lg transition-shadow hover:shadow-md'>
+      <div className='flex gap-x-4'>
+        <div className='text-4xl h-full my-auto mx-0'>{jsxIcon}</div>
+        <div className='w-full'>
+          <div className='flex justify-between items-center'>
+            <h1 className='font-semibold text-gray-900 text-lg'>@{username}</h1>
+            <HiOutlineExternalLink className='text-xl' />
+          </div>
+          <div>
+            <p className='text-sm'>{description}</p>
+            <span className='flex justify-end items-center text-sm opacity-80'>
+              {month} {yearDate}
+            </span>
+          </div>
+        </div>
       </div>
-      <h3>{username}</h3>
     </div>
   )
 }
