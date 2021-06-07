@@ -16,26 +16,6 @@ export default function BaseCard({
   description,
   jsxIcon = <AiFillHeart />,
 }) {
-  const yearDate = new Date().getFullYear()
-  const monthDate = new Date().getMonth()
-
-  const MONTHS_NAME = {
-    0: 'January',
-    1: 'February',
-    2: 'March',
-    3: 'April',
-    4: 'May',
-    5: 'June',
-    6: 'July',
-    7: 'August',
-    8: 'September',
-    9: 'October',
-    10: 'November',
-    11: 'December',
-  }
-
-  const month = MONTHS_NAME[monthDate]
-
   return (
     <div className='bg-gray-200 dark:bg-gray-700 p-4 rounded-lg transition-shadow hover:shadow-md'>
       <div className='flex gap-x-4'>
@@ -43,13 +23,12 @@ export default function BaseCard({
         <div className='w-full'>
           <div className='flex justify-between items-center'>
             <h1 className='font-semibold text-gray-900 text-lg'>@{username}</h1>
-            <HiOutlineExternalLink className='text-xl' />
+            <a href={url} target='_blank' rel='noreferrer'>
+              <HiOutlineExternalLink className='text-xl transform hover:scale-110' />
+            </a>
           </div>
           <div>
             <p className='text-sm'>{description}</p>
-            <span className='flex justify-end items-center text-sm opacity-80'>
-              {month} {yearDate}
-            </span>
           </div>
         </div>
       </div>
