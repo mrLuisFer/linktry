@@ -1,6 +1,6 @@
 import React from 'react'
 import BaseCard from './Base/BaseCard'
-import { socialLinks } from '../../Config/socialLinks'
+import { socialLinks } from '../../_Config/socialLinks'
 
 export default function SocialLinks() {
   const { username, url, description } = socialLinks.twitter

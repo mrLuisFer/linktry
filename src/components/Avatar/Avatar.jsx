@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaRegUserCircle } from 'react-icons/fa'
 
-import { userConfig } from '../../Config/userConfig'
+import { userConfig } from '../../_Config/userConfig'
 
 export default function Avatar() {
   const avatarUrl = userConfig.avatar
