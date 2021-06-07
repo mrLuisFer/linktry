@@ -4,6 +4,7 @@ export const userConfig = {
   firstName: 'Luis',
   lastName: 'Alvarez',
   username: 'mrLuisFer',
+  abour: '',
   socialMedia: [
     {
       socialName: '',
