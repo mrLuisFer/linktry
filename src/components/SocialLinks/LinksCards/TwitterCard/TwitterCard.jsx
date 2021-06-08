@@ -12,8 +12,9 @@ export default function TwitterCard({ twitterSocialLink = {} }) {
       url={url}
       description={description}
       jsxIcon={<SiTwitter />}
-      customCardClasses='twitterCard bg-blue-200 dark:bg-blue-500 dark:bg-opacity-20'
+      customCardClasses='twitterCard dark:bg-opacity-20 bg-gradient-to-r from-blue-200 to-blue-300 dark:from-blue-600 dark:to-blue-500'
       customIconClasses='hover:text-twitterColor'
+      customUrlIconClasses='dark:hover:text-twitterColor'
     />
   )
 }
