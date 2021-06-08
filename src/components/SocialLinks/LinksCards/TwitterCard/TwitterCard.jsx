@@ -1,5 +1,5 @@
 import React from 'react'
-import BaseCard from '../Base/BaseCard'
+import BaseCard from '../../Base/BaseCard'
 import { SiTwitter } from 'react-icons/si'
 import './twitterHover.css'
 

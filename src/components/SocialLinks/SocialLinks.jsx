@@ -1,6 +1,6 @@
 import React from 'react'
 import { socialLinks } from '../../_Config/socialLinks'
-import TwitterCard from './LinksCards/TwitterCard'
+import TwitterCard from './LinksCards/TwitterCard/TwitterCard'
 
 export default function SocialLinks() {
   return (
