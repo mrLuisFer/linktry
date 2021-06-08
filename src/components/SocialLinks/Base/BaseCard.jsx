@@ -16,8 +16,8 @@ import AnchorTag from '../../AnchorTag/AnchorTag'
  * @returns JSX.Element
  */
 export default function BaseCard({
-  username,
-  url,
+  username = '',
+  url = '',
   description = '',
   jsxIcon = <AiFillHeart />,
   customUsernameClasses = '',
