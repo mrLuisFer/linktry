@@ -3,7 +3,9 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        twitterColor: 'var(--twitter-color)',
+      },
     },
   },
   variants: {

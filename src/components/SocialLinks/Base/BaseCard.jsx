@@ -8,7 +8,11 @@ import AnchorTag from '../../AnchorTag/AnchorTag'
  * @param {String} username
  * @param {String} url
  * @param {String} description
- * @param {JSX.Element} jsxIcon
+ * @param {JSX.Element} jsxIcon AiFillHeart
+ * @param {String} customUsernameClasses
+ * @param {String} customIconClasses
+ * @param {String} customCardClasses
+ * @param {String} customUrlIconClasses
  * @returns JSX.Element
  */
 export default function BaseCard({
@@ -23,7 +27,7 @@ export default function BaseCard({
 }) {
   return (
     <div
-      className={`bg-gray-200 dark:bg-gray-700 p-4 rounded-lg transition-shadow hover:shadow-md ${customCardClasses}`}
+      className={`bg-gray-200 dark:bg-gray-700 p-4 rounded-lg transition-shadow hover:shadow-md removeBlueHighlight hoverBaseCard ${customCardClasses}`}
     >
       <div className='flex gap-x-4'>
         <div
@@ -42,7 +46,7 @@ export default function BaseCard({
             </h1>
             <AnchorTag>
               <HiOutlineExternalLink
-                className={`text-xl transform hover:scale-110 ${customUrlIconClasses}`}
+                className={`text-xl transform hover:scale-110 cursor-pointer ${customUrlIconClasses}`}
               />
             </AnchorTag>
           </div>

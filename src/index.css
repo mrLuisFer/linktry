@@ -1,3 +1,7 @@
+:root {
+  --twitter-color: #00acee;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,4 +33,21 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+}
+
+.removeBlueHighlight {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hoverBaseCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.hoverBaseCard:hover {
+  box-shadow: 10px 10px 0px #a7a7a7;
+  top: -5px;
+  left: -5px;
 }
