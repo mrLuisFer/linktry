@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaRegUserCircle } from 'react-icons/fa'
 
 import { userConfig } from '../../_Config/userConfig'
 
 export default function Avatar() {
+  const [isErrorAvatarUrl, setIsErrorAvatarUrl] = useState(false)
   const avatarUrl = userConfig.avatar
 
   const urlRegex = new RegExp(
@@ -13,11 +14,34 @@ export default function Avatar() {
   const fullName = `${userConfig.firstName} ${userConfig.lastName}`
   const altUsernameImg = `${userConfig.username} - avatar`
 
+  const defaultImg = new Request(
+    'https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI'
+  )
+
+  const fetchUserUrl = () => {
+    fetch(`${avatarUrl}`)
+      .then((response) => {
+        if (!response.ok) {
+          console.log(response.statusText)
+          setIsErrorAvatarUrl(true)
+        }
+        return response
+      })
+      .catch((error) => {
+        console.log(error)
+        setIsErrorAvatarUrl(true)
+      })
+  }
+
+  useEffect(() => {
+    fetchUserUrl()
+  }, [])
+
   return (
     <div className='py-8 flex flex-col'>
-      {avatarUrl.match(urlRegex) ? (
+      {avatarUrl.match(urlRegex) && !isErrorAvatarUrl ? (
         <img
-          src={avatarUrl}
+          src={isErrorAvatarUrl ? defaultImg : avatarUrl}
           alt={altUsernameImg}
           title={altUsernameImg}
           className='block mx-auto w-36 h-36 rounded-full transition transform hover:scale-105'
