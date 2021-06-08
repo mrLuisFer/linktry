@@ -14,9 +14,8 @@ export default function Avatar() {
   const fullName = `${userConfig.firstName} ${userConfig.lastName}`
   const altUsernameImg = `${userConfig.username} - avatar`
 
-  const defaultImg = new Request(
+  const defaultImg =
     'https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI'
-  )
 
   const fetchUserUrl = () => {
     fetch(`${avatarUrl}`)
@@ -35,15 +34,20 @@ export default function Avatar() {
 
   useEffect(() => {
     fetchUserUrl()
+    // eslint-disable-next-line
   }, [])
 
   return (
     <div className='py-8 flex flex-col'>
-      {avatarUrl.match(urlRegex) && !isErrorAvatarUrl ? (
+      {avatarUrl.match(urlRegex) ? (
         <img
           src={isErrorAvatarUrl ? defaultImg : avatarUrl}
           alt={altUsernameImg}
-          title={altUsernameImg}
+          title={
+            isErrorAvatarUrl
+              ? 'An error loading your avatar image'
+              : altUsernameImg
+          }
           className='block mx-auto w-36 h-36 rounded-full transition transform hover:scale-105'
         />
       ) : (
