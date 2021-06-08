@@ -14,7 +14,8 @@ export default function TwitterCard({
       url={url}
       description={description}
       jsxIcon={<SiTwitter />}
-      customCardClasses='twitterCard bg-gradient-to-r from-blue-300 to-blue-500'
+      customCardClasses='twitterCard bg-blue-200 dark:bg-blue-500 dark:bg-opacity-20'
+      customIconClasses='hover:text-twitterColor'
     />
   )
 }
