@@ -1,6 +1,7 @@
 import React from 'react'
 import { ImTwitch } from 'react-icons/im'
 import BaseCard from '../../Base/BaseCard'
+import './twitchHover.css'
 
 export default function TwitchCard({ twitchSocialLink = {} }) {
   const { username, url, description } = twitchSocialLink
@@ -11,6 +12,7 @@ export default function TwitchCard({ twitchSocialLink = {} }) {
       url={url}
       description={description}
       jsxIcon={<ImTwitch />}
+      customCardClasses='twitchCard bg-gradient-to-l from-purple-500 to-purple-600'
     />
   )
 }

@@ -1,5 +1,6 @@
 :root {
   --twitter-color: #00acee;
+  --twitch-color: #6441a5;
 }
 
 @tailwind base;
