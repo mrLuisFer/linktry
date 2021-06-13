@@ -33,7 +33,7 @@ When committing to a branch, Emojis will be used representing a new feature, bug
 
 ### 📑 To contribute
 
-When you want to contribute, you only need to clone the repository (you can follow the steps in the (README.md)[./README.md])
+When you want to contribute, you only need to clone the repository or fork the repository
 
 Create a new branch with some descriptive but short title
 
