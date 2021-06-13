@@ -11,7 +11,11 @@ export default function About() {
 
   return (
     <div className='px-6'>
-      <div className='w-60 bg-gray-300 dark:bg-gray-900 rounded-lg mx-auto transition-shadow shadow-sm hover:shadow'>
+      <div
+        className={`w-60 bg-gray-300 dark:bg-gray-900 rounded-lg mx-auto transition-shadow shadow-sm hover:shadow ${
+          showDescription ? 'border-2 border-blue-900' : ''
+        }`}
+      >
         <div
           className='userNoSelect flex justify-between items-center h-auto cursor-pointer py-3 px-4'
           onClick={handleShowDescription}
