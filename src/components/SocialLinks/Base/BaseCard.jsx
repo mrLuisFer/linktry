@@ -16,7 +16,7 @@ import AnchorTag from '../../AnchorTag/AnchorTag'
  * @returns JSX.Element
  */
 export default function BaseCard({
-  username = '',
+  username = 'Username',
   url = '',
   description = '',
   jsxIcon = <AiFillHeart />,
@@ -42,7 +42,7 @@ export default function BaseCard({
             }`}
           >
             <h1 className={`font-semibold text-lg ${customUsernameClasses}`}>
-              @{username}
+              {username.length > 0 ? username : 'Username'}
             </h1>
             <AnchorTag>
               <HiOutlineExternalLink
