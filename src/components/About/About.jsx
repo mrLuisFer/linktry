@@ -24,7 +24,7 @@ export default function About() {
           />
         </div>
         {showDescription ? (
-          <div className='mt-1 text-center p-3'>
+          <div className='text-center p-3'>
             <p className='text-sm'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Perspiciatis, iure. Dolores, velit, aliquam amet sunt dicta nemo
