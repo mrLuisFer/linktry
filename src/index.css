@@ -27,6 +27,10 @@ body {
   scroll-behavior: smooth;
 }
 
+#root {
+  min-width: 100vw;
+}
+
 .userNoSelect {
   -webkit-touch-callout: none;
   -webkit-user-select: none;

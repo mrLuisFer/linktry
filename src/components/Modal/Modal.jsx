@@ -4,15 +4,23 @@ import { CgCloseO, CgExpand } from 'react-icons/cg'
 
 /**
  *
- * @param {JSX.Element | React.FC} jsxComponent
+ * @param {JSX.Element | React.FC} children
  * @param {string} elementId
- * @param {Function} closeFunc
+ * @param {Function} closeModalFunc
  * @returns JSX.Element
  */
 export default function Modal({ children, elementId = '', closeModalFunc }) {
   const [expandWindowModal, setExpandWindowModal] = useState(false)
 
   const handleExpandWindow = () => setExpandWindowModal(!expandWindowModal)
+
+  const body = document.body
+  body.style.position = 'fixed'
+
+  const handleCloseModalFunc = () => {
+    closeModalFunc()
+    body.style.position = ''
+  }
 
   return (
     <>
@@ -34,7 +42,7 @@ export default function Modal({ children, elementId = '', closeModalFunc }) {
               />
               <CgCloseO
                 className='text-red-500 cursor-pointer'
-                onClick={closeModalFunc}
+                onClick={handleCloseModalFunc}
               />
             </div>
             {children}
