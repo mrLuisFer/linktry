@@ -4,8 +4,10 @@ export const userConfig = {
   firstName: 'Luis',
   lastName: 'Alvarez',
   username: 'mrLuisFer',
-  about: '',
+  about:
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias ratione eos rem nisi explicabo corrupti fuga delectus iste blanditiis sint? Sequi, pariatur incidunt voluptatem modi temporibus fugit reiciendis rerum fuga quo quas enim hic, qui porro placeat quia neque at!',
   phoneNumber: '',
-  country: '',
-  university: '',
+  country: 'Mexico',
+  state: '',
+  university: 'Cetis120',
 }

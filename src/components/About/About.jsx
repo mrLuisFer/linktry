@@ -20,7 +20,7 @@ export default function About() {
           className='userNoSelect flex justify-between items-center h-auto cursor-pointer py-3 px-4'
           onClick={handleShowDescription}
         >
-          <p>About</p>
+          <p className='font-semibold opacity-80'>About</p>
           <IoIosArrowForward
             className={`transform transition-transform ${
               showDescription ? 'rotate-90' : 'rotate-0 hover:rotate-45'
