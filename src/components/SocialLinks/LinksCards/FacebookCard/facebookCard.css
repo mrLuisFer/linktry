@@ -1,0 +1,11 @@
+.facebookCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.facebookCard:hover {
+  box-shadow: 10px 10px 0px var(--facebook-color);
+  top: -5px;
+  left: -5px;
+}

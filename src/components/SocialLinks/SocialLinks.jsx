@@ -6,10 +6,10 @@ import TwitterCard from './LinksCards/TwitterCard/TwitterCard'
 
 export default function SocialLinks() {
   return (
-    <div className='mt-5 px-4'>
+    <div className='my-5 px-4'>
       <TwitterCard twitterSocialLink={socialLinks.twitter} />
       <TwitchCard twitchSocialLink={socialLinks.twitch} />
-      <FacebookCard twitchSocialLink={socialLinks.facebook} />
+      <FacebookCard facebookSocialLink={socialLinks.facebook} />
     </div>
   )
 }
