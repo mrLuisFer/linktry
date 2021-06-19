@@ -1,0 +1,11 @@
+.githubCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.githubCard:hover {
+  box-shadow: 10px 10px 0px var(--github-color);
+  top: -5px;
+  left: -5px;
+}

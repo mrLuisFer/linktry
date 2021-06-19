@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { IoIosArrowForward } from 'react-icons/io'
-// import { userConfig } from '../../userConfig'
+import { userConfig } from '../../_Config/userConfig'
 
 export default function About() {
   const [showDescription, setShowDescription] = useState(false)
@@ -8,6 +8,8 @@ export default function About() {
   const handleShowDescription = () => {
     setShowDescription(!showDescription)
   }
+
+  const about = userConfig.about
 
   return (
     <div className='px-6'>
@@ -20,22 +22,18 @@ export default function About() {
           className='userNoSelect flex justify-between items-center h-auto cursor-pointer py-3 px-4'
           onClick={handleShowDescription}
         >
-          <p className='font-semibold opacity-80'>About</p>
+          <p className='font-semibold opacity-80'>
+            About {userConfig.firstName}
+          </p>
           <IoIosArrowForward
             className={`transform transition-transform ${
               showDescription ? 'rotate-90' : 'rotate-0 hover:rotate-45'
             }`}
           />
         </div>
-        {showDescription ? (
-          <div className='text-center p-3'>
-            <p className='text-sm'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis, iure. Dolores, velit, aliquam amet sunt dicta nemo
-              deleniti iure facilis doloremque enim nobis eligendi ad
-              accusantium deserunt totam adipisci maiores ipsam expedita eveniet
-              voluptate veniam similique nulla nihil! Quis, quae?
-            </p>
+        {showDescription && about.length > 5 ? (
+          <div className='text-center p-3 pt-0'>
+            <p className='text-sm'>{about}</p>
           </div>
         ) : (
           ''

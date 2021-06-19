@@ -38,7 +38,7 @@ export default function AvatarHtml({
                     ? 'An error loading your avatar image'
                     : altUsernameImg
                 }
-                className='block mx-auto w-36 h-36 rounded-full transition transform hover:scale-105 cursor-pointer'
+                className='removeBlueHighlight block mx-auto w-36 h-36 rounded-full transition transform hover:scale-105 cursor-pointer'
                 aria-hidden='true'
                 onClick={() => setShowModal(true)}
               />

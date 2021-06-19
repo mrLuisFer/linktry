@@ -5,6 +5,12 @@ module.exports = {
     extend: {
       colors: {
         twitterColor: 'var(--twitter-color)',
+        redditColor: 'var(--reddit-color)',
+        twitchColor: 'var(--twitch-color)',
+        facebookColor: 'var(--facebook-color)',
+        linkedinColor: 'var(--linkedin-color)',
+        githubColor: 'var(--github-color)',
+        behanceColor: 'var(--behance-color)',
       },
     },
   },

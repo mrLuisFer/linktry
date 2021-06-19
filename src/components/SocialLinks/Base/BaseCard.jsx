@@ -31,6 +31,7 @@ export default function BaseCard({
     >
       <div className='flex gap-x-4'>
         <div
+          draggable='false'
           className={`text-4xl h-full my-auto mx-0 transform hover:scale-110 ${customIconClasses}`}
         >
           <AnchorTag hrefUrl={url}>{jsxIcon}</AnchorTag>
