@@ -28,10 +28,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 #root {
   min-width: 100vw;
+  overflow-x: hidden;
 }
 
 .userNoSelect {

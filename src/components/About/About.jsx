@@ -12,9 +12,9 @@ export default function About() {
   const about = userConfig.about
 
   return (
-    <div className='px-6 sm:px-0'>
+    <div className='px-0'>
       <div
-        className={`w-60 bg-gray-300 dark:bg-gray-900 rounded-lg mx-auto transition-shadow shadow-sm hover:shadow sm:w-80 ${
+        className={`w-60 bg-gray-300 dark:bg-gray-900 rounded-lg mx-auto transition-shadow shadow-sm hover:shadow sm:w-80 md:w-96 ${
           showDescription ? 'border-2 dark:border-blue-900 border-gray-500' : ''
         }`}
       >
@@ -33,7 +33,7 @@ export default function About() {
         </div>
         {showDescription && about.length > 5 ? (
           <div className='text-center p-3 pt-0'>
-            <p className='text-sm'>{about}</p>
+            <p className='text-sm md:text-base'>{about}</p>
           </div>
         ) : (
           ''

@@ -26,13 +26,13 @@ export default function Modal({ children, elementId = '', closeModalFunc }) {
     <>
       {ReactDOM.createPortal(
         <div
-          className={`fixed inset-0 bg-black bg-opacity-50 min-h-screen px-4 ${
+          className={`fixed inset-0 bg-black bg-opacity-50 min-h-screen px-4 sm:px-0 ${
             expandWindowModal ? 'pt-4' : 'pt-24'
           } `}
         >
           <div
-            className={`relative p-3 bg-gray-50 dark:bg-gray-100 rounded-lg transition-all ${
-              expandWindowModal ? 'w-full h-full' : 'w-72'
+            className={`relative p-3 bg-gray-50 dark:bg-gray-100 rounded-lg transition-all sm:mx-auto ${
+              expandWindowModal ? 'w-full h-full sm:w-3/4 sm:h-4/5' : 'w-72 sm:w-80 sm:h-80'
             }`}
           >
             <div className='flex justify-end gap-x-2 text-2xl'>

@@ -9,8 +9,8 @@ export default function HeaderToggle() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
 
   const body = document.body
-  const lightIcon = <RiMoonClearFill />
-  const darkIcon = <FaLightbulb />
+  const lightIcon = <RiMoonClearFill title='Active dark mode' />
+  const darkIcon = <FaLightbulb title='Active light mode' />
   const [icon, setIcon] = useState(lightIcon)
 
   const handleClickToggleDarkMode = (event) => {

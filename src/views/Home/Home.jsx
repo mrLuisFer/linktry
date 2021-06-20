@@ -7,7 +7,7 @@ import Footer from '../../components/Footer/Footer'
 
 export default function Home() {
   return (
-    <div className='container mx-auto min-h-screen'>
+    <div className='sm:mx-auto min-h-screen md:w-3/5'>
       <Header />
       <Avatar />
       <About />

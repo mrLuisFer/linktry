@@ -38,7 +38,7 @@ export default function AvatarHtml({
                     ? 'An error loading your avatar image'
                     : altUsernameImg
                 }
-                className='removeBlueHighlight block mx-auto w-36 h-36 md:w-44 md:h-44 rounded-full transition transform hover:scale-105 cursor-pointer'
+                className='removeBlueHighlight block mx-auto w-36 h-36 md:w-44 md:h-44 rounded-full transition transform hover:scale-105 cursor-pointer lg:w-48 lg:h-48 select-none'
                 aria-hidden='true'
                 onClick={() => setShowModal(true)}
                 draggable='false'
@@ -57,7 +57,7 @@ export default function AvatarHtml({
         </>
       )}
       <h1
-        className='text-center font-semibold mx-auto mt-6 text-2xl border-b-4 border-green-500 inline-block w-auto'
+        className='text-center font-semibold mx-auto mt-6 text-2xl md:text-3xl border-b-4 border-green-500 inline-block w-auto'
         title={userConfig.username}
       >
         {fullName}

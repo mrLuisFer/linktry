@@ -6,7 +6,7 @@ export default function HeaderToggleHtml({
   icon,
 }) {
   return (
-    <div className='flex flex-col userNoSelect'>
+    <div className='flex flex-col userNoSelect sm:transition-transform sm:scale-110 md:scale-125'>
       <label
         htmlFor='toggleInput'
         className='inline-flex items-center cursor-pointer'
