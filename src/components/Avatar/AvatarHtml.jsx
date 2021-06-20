@@ -3,6 +3,10 @@ import Loader from '../Loader/Loader'
 import Modal from '../Modal/Modal'
 import AvatarModal from './AvatarModal/AvatarModal'
 
+const urlRegex = new RegExp(
+  '^(?:(?:http(?:s)?|ftp)://)(?:\\S+(?::(?:\\S)*)?@)?(?:(?:[a-z0-9\u00a1-\uffff](?:-)*)*(?:[a-z0-9\u00a1-\uffff])+)(?:\\.(?:[a-z0-9\u00a1-\uffff](?:-)*)*(?:[a-z0-9\u00a1-\uffff])+)*(?:\\.(?:[a-z0-9\u00a1-\uffff]){2,})(?::(?:\\d){2,5})?(?:/(?:\\S)*)?$'
+)
+
 export default function AvatarHtml({
   fullName,
   altUsernameImg,
@@ -10,15 +14,9 @@ export default function AvatarHtml({
   isErrorAvatarUrl,
   avatarUrl,
   userConfig,
+  avtarFetched,
 }) {
   const [showModal, setShowModal] = useState(false)
-
-  const urlRegex = new RegExp(
-    '^(?:(?:http(?:s)?|ftp)://)(?:\\S+(?::(?:\\S)*)?@)?(?:(?:[a-z0-9\u00a1-\uffff](?:-)*)*(?:[a-z0-9\u00a1-\uffff])+)(?:\\.(?:[a-z0-9\u00a1-\uffff](?:-)*)*(?:[a-z0-9\u00a1-\uffff])+)*(?:\\.(?:[a-z0-9\u00a1-\uffff]){2,})(?::(?:\\d){2,5})?(?:/(?:\\S)*)?$'
-  )
-
-  const defaultImg =
-    'https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI'
 
   const closeModal = () => setShowModal(false)
 
@@ -31,7 +29,7 @@ export default function AvatarHtml({
           {avatarUrl.match(urlRegex) ? (
             <div className='lg:flex md:max-w-2xl'>
               <img
-                src={isErrorAvatarUrl ? defaultImg : avatarUrl}
+                src={avtarFetched}
                 alt={altUsernameImg}
                 title={
                   isErrorAvatarUrl

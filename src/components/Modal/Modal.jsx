@@ -31,8 +31,8 @@ export default function Modal({ children, elementId = '', closeModalFunc }) {
           } `}
         >
           <div
-            className={`relative p-3 bg-gray-50 dark:bg-gray-100 rounded-lg transition-all sm:mx-auto ${
-              expandWindowModal ? 'w-full h-full sm:w-3/4 sm:h-4/5' : 'w-72 sm:w-80 sm:h-80'
+            className={`relative p-3 bg-gray-50 dark:bg-gray-700 rounded-lg transition-all sm:mx-auto ${
+              expandWindowModal ? 'w-full h-full sm:w-3/4 sm:h-4/5' : 'w-72 sm:w-80 h-auto'
             }`}
           >
             <div className='flex justify-end gap-x-2 text-2xl'>

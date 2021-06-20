@@ -1,40 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { useAvatar } from '../../hooks/useAvatar'
 import { userConfig } from '../../_Config/userConfig'
 import AvatarHtml from './AvatarHtml'
 
 export default function Avatar() {
-  const [isErrorAvatarUrl, setIsErrorAvatarUrl] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
   const avatarUrl = userConfig.avatar
-
   const fullName = `${userConfig.firstName} ${userConfig.lastName}`
   const altUsernameImg = `${userConfig.username} - avatar`
 
-  const fetchUserUrl = () => {
-    fetch(`${avatarUrl}`)
-      .then((response) => {
-        if (!response.ok) {
-          console.log(response.statusText)
-          setIsErrorAvatarUrl(true)
-        }
-        setIsLoading(false)
-        return response
-      })
-      .catch((error) => {
-        console.log(error)
-        setIsErrorAvatarUrl(true)
-      })
-  }
-
-  useEffect(() => {
-    fetchUserUrl()
-
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 1000)
-    return () => clearTimeout(timer)
-    // eslint-disable-next-line
-  }, [])
+  const { isLoading, isErrorAvatarUrl, avtarFetched } = useAvatar({ avatarUrl })
 
   return (
     <AvatarHtml
@@ -44,6 +18,7 @@ export default function Avatar() {
       isErrorAvatarUrl={isErrorAvatarUrl}
       avatarUrl={avatarUrl}
       userConfig={userConfig}
+      avtarFetched={avtarFetched}
     />
   )
 }
