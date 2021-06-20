@@ -23,13 +23,13 @@ export default function AvatarHtml({
   const closeModal = () => setShowModal(false)
 
   return (
-    <div className='py-8 flex flex-col'>
+    <div className='py-8 flex flex-col md:max-w-2xl md:mx-auto'>
       {isLoading ? (
         <Loader />
       ) : (
         <>
           {avatarUrl.match(urlRegex) ? (
-            <>
+            <div className='lg:flex md:max-w-2xl'>
               <img
                 src={isErrorAvatarUrl ? defaultImg : avatarUrl}
                 alt={altUsernameImg}
@@ -38,9 +38,10 @@ export default function AvatarHtml({
                     ? 'An error loading your avatar image'
                     : altUsernameImg
                 }
-                className='removeBlueHighlight block mx-auto w-36 h-36 rounded-full transition transform hover:scale-105 cursor-pointer'
+                className='removeBlueHighlight block mx-auto w-36 h-36 md:w-44 md:h-44 rounded-full transition transform hover:scale-105 cursor-pointer'
                 aria-hidden='true'
                 onClick={() => setShowModal(true)}
+                draggable='false'
               />
               {showModal ? (
                 <Modal elementId='avatar-modal' closeModalFunc={closeModal}>
@@ -49,7 +50,7 @@ export default function AvatarHtml({
               ) : (
                 ''
               )}
-            </>
+            </div>
           ) : (
             <Loader />
           )}

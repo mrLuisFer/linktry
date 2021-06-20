@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className='mt-9'>
+    <div className='mt-9 w-full'>
       <div className='h-1 w-full  bg-gray-200 dark:bg-gray-700' />
       <p className='py-4 text-center'>
         Created with{' '}

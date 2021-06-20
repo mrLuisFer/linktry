@@ -3,7 +3,7 @@ import HeaderToggle from './HeaderToggle/HeaderToggle'
 
 export default function Header() {
   return (
-    <div className='flex items-center justify-between pt-5 px-4'>
+    <div className='flex items-center justify-between pt-5 px-4 sm:max-w-lg md:max-w-2xl sm:mx-auto'>
       <h1 className='text-base font-medium cursor-pointer opacity-80 hover:opacity-100 transition-opacity'>
         ⚛ Linktree
       </h1>

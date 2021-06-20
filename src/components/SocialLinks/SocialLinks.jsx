@@ -10,7 +10,7 @@ import BehanceCard from './LinksCards/BehanceCard/BehanceCard'
 
 export default function SocialLinks() {
   return (
-    <div className='my-5 px-4'>
+    <div className='my-5 px-4 sm:px-0'>
       <TwitterCard twitterSocialLink={socialLinks.twitter} />
       <TwitchCard twitchSocialLink={socialLinks.twitch} />
       <FacebookCard facebookSocialLink={socialLinks.facebook} />

@@ -27,7 +27,7 @@ export default function BaseCard({
 }) {
   return (
     <div
-      className={`bg-gray-200 dark:bg-gray-700 p-4 rounded-lg my-6 transition-shadow hover:shadow-md removeBlueHighlight hoverBaseCard ${customCardClasses}`}
+      className={`bg-gray-200 dark:bg-gray-700 p-4 rounded-lg my-6 transition-shadow hover:shadow-md removeBlueHighlight hoverBaseCard ${customCardClasses} sm:max-w-lg md:max-w-xl sm:mx-auto`}
     >
       <div className='flex gap-x-4'>
         <div
