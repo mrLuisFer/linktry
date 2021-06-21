@@ -12,8 +12,6 @@ export default function Avatar() {
     avatarUrl,
   })
 
-  console.log(avatarFetched)
-
   return (
     <AvatarHtml
       fullName={fullName}

@@ -13,14 +13,17 @@ export const useAvatar = ({
       '^(?:(?:http(?:s)?|ftp)://)(?:\\S+(?::(?:\\S)*)?@)?(?:(?:[a-z0-9\u00a1-\uffff](?:-)*)*(?:[a-z0-9\u00a1-\uffff])+)(?:\\.(?:[a-z0-9\u00a1-\uffff](?:-)*)*(?:[a-z0-9\u00a1-\uffff])+)*(?:\\.(?:[a-z0-9\u00a1-\uffff]){2,})(?::(?:\\d){2,5})?(?:/(?:\\S)*)?$'
     )
 
+    const throwError = () => {
+      setIsErrorAvatarUrl(true)
+      setIsLoading(false)
+      setAvatarFetched(defaultImg)
+    }
+
     if (avatarUrl.match(urlRegex)) {
       fetch(`${avatarUrl}`)
         .then((res) => {
-          console.log(res)
-          if (!res.ok) {
-            setIsErrorAvatarUrl(true)
-            setIsLoading(false)
-            setAvatarFetched(defaultImg)
+          if (!res.ok && res.status !== 200) {
+            throwError()
           }
           setIsLoading(false)
           setIsErrorAvatarUrl(false)
@@ -28,11 +31,10 @@ export const useAvatar = ({
         })
         .catch((error) => {
           console.log(error)
+          throwError()
         })
     } else {
-      setIsErrorAvatarUrl(true)
-      setIsLoading(false)
-      setAvatarFetched(defaultImg)
+      throwError()
     }
   }, [avatarUrl, defaultImg])
 
@@ -40,7 +42,6 @@ export const useAvatar = ({
     fetchingAvatar()
   }, [fetchingAvatar])
 
-  console.log(avatarFetched)
   return {
     isLoading,
     isErrorAvatarUrl,
