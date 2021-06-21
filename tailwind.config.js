@@ -18,6 +18,10 @@ module.exports = {
         githubColor: 'var(--github-color)',
         behanceColor: 'var(--behance-color)',
       },
+      backgroundImage: (theme) => ({
+        'hero-bg':
+          'url(https://images.unsplash.com/photo-1622679202532-b6e011f04212?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixlib=rb-1.2.1&q=80&w=400)',
+      }),
     },
   },
   variants: {
