@@ -8,7 +8,11 @@ export default function Avatar() {
   const fullName = `${userConfig.firstName} ${userConfig.lastName}`
   const altUsernameImg = `${userConfig.username} - avatar`
 
-  const { isLoading, isErrorAvatarUrl, avtarFetched } = useAvatar({ avatarUrl })
+  const { isLoading, isErrorAvatarUrl, avatarFetched } = useAvatar({
+    avatarUrl,
+  })
+
+  console.log(avatarFetched)
 
   return (
     <AvatarHtml
@@ -16,9 +20,8 @@ export default function Avatar() {
       altUsernameImg={altUsernameImg}
       isLoading={isLoading}
       isErrorAvatarUrl={isErrorAvatarUrl}
-      avatarUrl={avatarUrl}
       userConfig={userConfig}
-      avtarFetched={avtarFetched}
+      avatarFetched={avatarFetched}
     />
   )
 }

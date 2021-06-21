@@ -1,45 +1,49 @@
-import { useState, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
-export const useAvatar = ({ avatarUrl }) => {
+export const useAvatar = ({
+  avatarUrl = '',
+  defaultImg = 'https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI',
+}) => {
   const [isLoading, setIsLoading] = useState(true)
   const [isErrorAvatarUrl, setIsErrorAvatarUrl] = useState(false)
-  const [avtarFetched, setAvatarFetched] = useState('')
+  const [avatarFetched, setAvatarFetched] = useState('')
 
-  const defaultImg =
-    'https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI'
+  const fetchingAvatar = useCallback(() => {
+    const urlRegex = new RegExp(
+      '^(?:(?:http(?:s)?|ftp)://)(?:\\S+(?::(?:\\S)*)?@)?(?:(?:[a-z0-9\u00a1-\uffff](?:-)*)*(?:[a-z0-9\u00a1-\uffff])+)(?:\\.(?:[a-z0-9\u00a1-\uffff](?:-)*)*(?:[a-z0-9\u00a1-\uffff])+)*(?:\\.(?:[a-z0-9\u00a1-\uffff]){2,})(?::(?:\\d){2,5})?(?:/(?:\\S)*)?$'
+    )
 
-  const fetchUserUrl = () => {
-    fetch(`${avatarUrl}`)
-      .then((response) => {
-        if (!response.ok) {
-          console.log(response.statusText)
-          setIsErrorAvatarUrl(true)
-          setAvatarFetched(defaultImg)
-        }
-        setIsLoading(false)
-        return response
-      })
-      .then((data) => setAvatarFetched(data))
-      .catch((error) => {
-        console.log(error)
-        setIsErrorAvatarUrl(true)
-        setAvatarFetched(defaultImg)
-      })
-  }
+    if (avatarUrl.match(urlRegex)) {
+      fetch(`${avatarUrl}`)
+        .then((res) => {
+          console.log(res)
+          if (!res.ok) {
+            setIsErrorAvatarUrl(true)
+            setIsLoading(false)
+            setAvatarFetched(defaultImg)
+          }
+          setIsLoading(false)
+          setIsErrorAvatarUrl(false)
+          setAvatarFetched(res.url)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    } else {
+      setIsErrorAvatarUrl(true)
+      setIsLoading(false)
+      setAvatarFetched(defaultImg)
+    }
+  }, [avatarUrl, defaultImg])
 
   useEffect(() => {
-    fetchUserUrl()
+    fetchingAvatar()
+  }, [fetchingAvatar])
 
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 1000)
-    return () => clearTimeout(timer)
-    // eslint-disable-next-line
-  }, [])
-
+  console.log(avatarFetched)
   return {
     isLoading,
     isErrorAvatarUrl,
-    avtarFetched,
+    avatarFetched,
   }
 }

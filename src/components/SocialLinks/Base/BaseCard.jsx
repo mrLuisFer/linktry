@@ -34,7 +34,9 @@ export default function BaseCard({
           draggable='false'
           className={`text-4xl md:text-5xl h-full my-auto mx-0 transform hover:scale-110 ${customIconClasses}`}
         >
-          <AnchorTag hrefUrl={url}>{jsxIcon}</AnchorTag>
+          <AnchorTag hrefUrl={url} customClasses='text-white'>
+            {jsxIcon}
+          </AnchorTag>
         </div>
         <div className='w-full'>
           <div
