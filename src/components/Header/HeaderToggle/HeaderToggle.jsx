@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import HeaderToggleHtml from "./HeaderToggleHtml"
 import RecomendationMsg from "../RecomendationMsg/RecomendationMsg"
-import { useSetDarkMode } from "./hook/useSetDarkMode"
+import { useSetDarkMode } from "../../../hooks/useSetDarkMode"
 
 export default function HeaderToggle() {
   const [closeMsg, setCloseMsg] = useState(false)
