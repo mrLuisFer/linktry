@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import Loader from '../Loader/Loader'
-import Modal from '../Modal/Modal'
-import AvatarModal from './AvatarModal/AvatarModal'
+import React, { useState } from "react"
+import Loader from "../Loader/Loader"
+import Modal from "../Modal/Modal"
+import AvatarModal from "./AvatarModal/AvatarModal"
 
 export default function AvatarHtml({
   fullName,
@@ -26,10 +26,10 @@ export default function AvatarHtml({
             alt={altUsernameImg}
             title={
               isErrorAvatarUrl
-                ? 'An error loading your avatar image'
+                ? "An error loading your avatar image"
                 : altUsernameImg
             }
-            className='removeBlueHighlight block mx-auto w-36 h-36 md:w-44 md:h-44 rounded-full transition transform hover:scale-105 cursor-pointer lg:w-48 lg:h-48 select-none'
+            className='block mx-auto rounded-full cursor-pointer select-none removeBlueHighlight w-36 h-36 md:w-44 md:h-44 transition transform hover:scale-105 lg:w-48 lg:h-48'
             aria-hidden='true'
             onClick={() => setShowModal(true)}
             draggable='false'
@@ -39,12 +39,12 @@ export default function AvatarHtml({
               <AvatarModal />
             </Modal>
           ) : (
-            ''
+            ""
           )}
         </div>
       )}
       <h1
-        className='text-center font-semibold mx-auto mt-6 text-2xl md:text-3xl border-b-4 border-green-500 inline-block w-auto'
+        className='inline-block w-auto mx-auto mt-6 text-2xl font-semibold text-center border-b-4 border-green-500 md:text-3xl'
         title={userConfig.username}
       >
         {fullName}
