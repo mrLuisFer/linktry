@@ -1,6 +1,6 @@
-import React from 'react'
-import Linktree from '../../assets/linktree.svg'
-import HeaderToggle from './HeaderToggle/HeaderToggle'
+import React from "react"
+import Linktree from "../../assets/linktree.svg"
+import HeaderToggle from "./HeaderToggle/HeaderToggle"
 
 export default function Header() {
   return (
