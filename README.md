@@ -14,7 +14,7 @@ If you want cards or a more customized use you can modify the source code by mak
 You can even do a pull request if you improve code or page performance
 
 You can find more info of how to contribute:
-[here](https://gist.github.com/MarcDiethelm/7303312)https://gist.github.com/MarcDiethelm/7303312)
+[here](https://gist.github.com/MarcDiethelm/7303312)
 
 ## 📜 Available Scripts
 
