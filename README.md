@@ -2,7 +2,19 @@
 
 ## ⚡ About
 
-In contruction...
+To use or deploy it you only need to modify the two files inside
+`/src/_Config`
+
+And add the information you want, the settings and use of this information is already programmed to appear on the page
+
+### ⭐ Advanced
+
+If you want cards or a more customized use you can modify the source code by making a fork of the repository and modify it to taste or needs
+
+You can even do a pull request if you improve code or page performance
+
+You can find more info of how to contribute:
+[here](https://gist.github.com/MarcDiethelm/7303312)https://gist.github.com/MarcDiethelm/7303312)
 
 ## 📜 Available Scripts
 
