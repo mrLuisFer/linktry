@@ -6,21 +6,13 @@ import { socialLinks } from '../../../_Config/socialLinks'
 import AnchorTag from '../../AnchorTag/AnchorTag'
 
 export default function AvatarModal() {
-  const {
-    avatar,
-    firstName,
-    lastName,
-    username,
-    about,
-    phoneNumber,
-    country,
-    state,
-    university,
-  } = userConfig
+  const { avatar, firstName, lastName, username, about, country, state } =
+    userConfig
 
   const { avatarFetched } = useAvatar({ avatarUrl: avatar })
 
-  console.log(avatarFetched)
+  const urlIconClassName =
+    'transform hover:scale-110 text-gray-800 dark:text-gray-300 p-2 hover:bg-gray-800 hover:text-gray-100 rounded-lg'
 
   return (
     <div className='mt-4'>
@@ -36,22 +28,22 @@ export default function AvatarModal() {
         <h1 className='text-center text-2xl font-medium text-gray-800 dark:text-indigo-50 select-none'>
           {firstName} {lastName}
         </h1>
-        <div className='flex justify-center gap-x-9 my-3 text-xl'>
+        <div className='flex justify-center gap-x-9 m-1 text-xl'>
           <AnchorTag
             hrefUrl={socialLinks.twitter.url}
-            customClasses='transform hover:scale-125 text-gray-800 dark:text-gray-300'
+            customClasses={urlIconClassName}
           >
             <FiTwitter />
           </AnchorTag>
           <AnchorTag
             hrefUrl={socialLinks.github.url}
-            customClasses='transform hover:scale-125 text-gray-800 dark:text-gray-300'
+            customClasses={urlIconClassName}
           >
             <FiGithub />
           </AnchorTag>
           <AnchorTag
             hrefUrl={socialLinks.linkedin.url}
-            customClasses='transform hover:scale-125 text-gray-800 dark:text-gray-300'
+            customClasses={urlIconClassName}
           >
             <FiLinkedin />
           </AnchorTag>
@@ -60,22 +52,17 @@ export default function AvatarModal() {
       <p className='text-sm text-center mb-2 max-w-screen-mb md:max-w-screen-sm mx-auto text-gray-800 dark:text-gray-200'>
         {about}
       </p>
-      <div className='flex justify-between my-3 max-w-screen-mb md:max-w-screen-sm mx-auto text-gray-800 dark:text-gray-200'>
+      <div className='flex justify-center gap-x-1 items-center my-3 max-w-screen-mb md:max-w-screen-sm mx-auto text-gray-800 dark:text-gray-200'>
         {country.length > 0 ? (
-          <p className='text-xs'>Country: {country}</p>
+          <span className='text-xs capitalize'>{country}</span>
         ) : (
           ''
         )}
-        {state.length > 0 ? <p className='text-xs'>State: {state}</p> : ''}
-      </div>
-      <div className='flex justify-between my-3 max-w-screen-mb md:max-w-screen-sm mx-auto text-gray-800 dark:text-gray-200'>
-        {phoneNumber.length > 0 ? (
-          <p className='text-xs'>Phone: {phoneNumber}</p>
-        ) : (
-          ''
-        )}
-        {university.length > 0 ? (
-          <p className='text-xs'>University: {university}</p>
+        {state.length > 0 ? (
+          <>
+            <span>|</span>
+            <span className='text-xs capitalize'>{state}</span>
+          </>
         ) : (
           ''
         )}
