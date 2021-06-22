@@ -27,7 +27,7 @@ export default function HeaderToggleHtml({
             />
           </span>
         </span>
-        <span className='ml-3 text-xl text-blue-600 dark:text-yellow-300 transform transition-transform hover:scale-110'>
+        <span className='ml-3 text-xl text-blue-600 dark:text-yellow-300 transform transition-transform hover:scale-110 animate-bounce'>
           {icon}
         </span>
       </label>

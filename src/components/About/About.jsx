@@ -27,7 +27,9 @@ export default function About() {
           </p>
           <IoIosArrowForward
             className={`transform transition-transform ${
-              showDescription ? 'rotate-90' : 'rotate-0 hover:rotate-45'
+              showDescription
+                ? 'rotate-90'
+                : 'rotate-0 hover:rotate-45 animate-pulse'
             }`}
           />
         </div>
