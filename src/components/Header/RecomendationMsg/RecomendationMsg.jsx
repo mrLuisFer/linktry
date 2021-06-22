@@ -7,11 +7,14 @@ export default function RecomendationMsg({ setCloseMsg }) {
   const [language, setLanguage] = useState("english")
   const [showLangs, setShowLangs] = useState(false)
 
-  console.log(language)
+  const handleCloseMsg = () => {
+    setCloseMsg(true)
+    localStorage.setItem("closedMsg", true)
+  }
 
   return (
     <div className='absolute right-0 w-52 text-sm bg-gray-700 text-white p-3 rounded-lg mt-3 z-10'>
-      <div className='flex justify-between text-lg mb-2'>
+      <div className='flex justify-between mb-2 text-lg'>
         <div>
           <IoLanguageSharp
             onClick={() => setShowLangs(!showLangs)}
@@ -22,8 +25,8 @@ export default function RecomendationMsg({ setCloseMsg }) {
           {showLangs ? <LangList setLanguage={setLanguage} /> : ""}
         </div>
         <IoCloseSharp
-          className='cursor-pointer transform hover:scale-110 select-none'
-          onClick={() => setCloseMsg(true)}
+          className='cursor-pointer select-none transform hover:scale-110'
+          onClick={handleCloseMsg}
         />
       </div>
       {langs[language]}
