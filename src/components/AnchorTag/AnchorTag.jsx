@@ -1,13 +1,10 @@
-import React from 'react'
-
 /**
- *
  * @param {JSX.Element} children
  * @param {String} hrefUrl - href is necessary
  * @param {String} customClasses - Tailwind classes
- * @returns JSX.Elment
+ * @returns {JSX.Elment}
  */
-export default function AnchorTag({ children, hrefUrl, customClasses = '' }) {
+export default function AnchorTag({ children, hrefUrl, customClasses = "" }) {
   return (
     <a
       href={hrefUrl}

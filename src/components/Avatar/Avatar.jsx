@@ -1,4 +1,3 @@
-import React from "react"
 import { useAvatar } from "../../hooks/useAvatar"
 import { userConfig } from "../../_Config/userConfig"
 import AvatarHtml from "./AvatarHtml"

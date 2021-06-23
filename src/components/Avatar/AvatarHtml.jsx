@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import Loader from "../Loader/Loader"
 import Modal from "../Modal/Modal"
 import AvatarModal from "./AvatarModal/AvatarModal"
