@@ -1,6 +1,6 @@
-import { AiFillHeart } from "react-icons/ai"
-import { HiOutlineExternalLink } from "react-icons/hi"
-import AnchorTag from "../../AnchorTag/AnchorTag"
+import { AiFillHeart } from 'react-icons/ai'
+import { HiOutlineExternalLink } from 'react-icons/hi'
+import AnchorTag from '../../AnchorTag/AnchorTag'
 
 /**
  *
@@ -15,14 +15,14 @@ import AnchorTag from "../../AnchorTag/AnchorTag"
  * @returns JSX.Element
  */
 export default function BaseCard({
-  username = "",
-  url = "",
-  description = "",
+  username = '',
+  url = '',
+  description = '',
   jsxIcon = <AiFillHeart />,
-  customUsernameClasses = "",
-  customIconClasses = "",
-  customCardClasses = "",
-  customUrlIconClasses = "",
+  customUsernameClasses = '',
+  customIconClasses = '',
+  customCardClasses = '',
+  customUrlIconClasses = '',
 }) {
   return (
     <>
@@ -46,13 +46,13 @@ export default function BaseCard({
               <div className='w-full'>
                 <div
                   className={`flex justify-between items-center ${
-                    description.length > 5 ? "" : "h-full"
+                    description.length > 5 ? '' : 'h-full'
                   }`}
                 >
                   <h1
-                    className={`font-semibold text-lg text-black ${customUsernameClasses} group-hover:underline`}
+                    className={`font-semibold text-lg text-black dark:text-white ${customUsernameClasses} group-hover:underline`}
                   >
-                    {username.length > 0 ? username : "Username"}
+                    {username.length > 0 ? username : 'Username'}
                   </h1>
                   <AnchorTag hrefUrl={url}>
                     <HiOutlineExternalLink
@@ -63,14 +63,14 @@ export default function BaseCard({
                 {description.length > 5 ? (
                   <p className='text-sm'>{description}</p>
                 ) : (
-                  ""
+                  ''
                 )}
               </div>
             </div>
           </AnchorTag>
         </div>
       ) : (
-        ""
+        ''
       )}
     </>
   )
