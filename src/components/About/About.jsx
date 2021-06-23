@@ -12,9 +12,9 @@ export default function About() {
   const about = userConfig.about
 
   return (
-    <div className='px-0'>
+    <div>
       <div
-        className={`w-60 bg-gray-300 dark:bg-gray-900 rounded-lg mx-auto transition-shadow shadow-sm hover:shadow sm:w-80 md:w-96 ${
+        className={`w-60 bg-gray-300 dark:bg-gray-900 rounded-lg mx-auto transition-shadow shadow-sm hover:shadow mb:72 sm:w-80 md:w-96 ${
           showDescription ? 'border-2 dark:border-gray-700 border-gray-400' : ''
         }`}
       >
