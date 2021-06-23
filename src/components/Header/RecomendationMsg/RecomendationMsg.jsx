@@ -13,13 +13,13 @@ export default function RecomendationMsg({ setCloseMsg }) {
   }
 
   return (
-    <div className='absolute right-0 w-52 text-sm bg-gray-700 text-white p-3 rounded-lg mt-3 z-10'>
+    <div className='absolute right-0 w-52 text-sm bg-gray-700 text-white p-3 rounded-lg mt-3 z-10 shadow-md sm:shadow-lg'>
       <div className='flex justify-between mb-2 text-lg'>
         <div>
           <IoLanguageSharp
             onClick={() => setShowLangs(!showLangs)}
             className={`cursor-pointer transform hover:scale-110 select-none ${
-              showLangs ? "animate-pulse" : ""
+              showLangs ? "animate-pulse" : "animate-spin"
             }`}
           />
           {showLangs ? <LangList setLanguage={setLanguage} /> : ""}

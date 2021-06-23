@@ -28,7 +28,9 @@ export default function AvatarModal() {
         <h1 className='text-center text-2xl font-medium text-gray-800 dark:text-indigo-50 select-none'>
           {firstName} {lastName}
         </h1>
-        <p className='text-center w-full text-sm opacity-70 animate-pulse'>@{username}</p>
+        <p className='text-center w-full text-sm opacity-70 animate-pulse'>
+          @{username}
+        </p>
         <div className='flex justify-center gap-x-9 m-1 text-xl'>
           <AnchorTag
             hrefUrl={socialLinks.twitter.url}
@@ -50,7 +52,7 @@ export default function AvatarModal() {
           </AnchorTag>
         </div>
       </div>
-      <p className='text-sm text-center mb-2 max-w-screen-mb md:max-w-screen-sm mx-auto text-gray-800 dark:text-gray-200'>
+      <p className='text-sm text-center mb-2 max-w-screen-mb md:max-w-screen-sm mx-auto text-gray-800 dark:text-gray-200 leading-6'>
         {about}
       </p>
       <div className='flex justify-center gap-x-1 items-center my-3 max-w-screen-mb md:max-w-screen-sm mx-auto text-gray-800 dark:text-gray-200'>
