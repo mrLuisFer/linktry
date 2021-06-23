@@ -1,4 +1,3 @@
-import React from "react"
 import Linktree from "../../assets/linktree.svg"
 import HeaderToggle from "./HeaderToggle/HeaderToggle"
 

@@ -1,4 +1,3 @@
-import React from "react"
 import { AiFillHeart } from "react-icons/ai"
 import { HiOutlineExternalLink } from "react-icons/hi"
 import AnchorTag from "../../AnchorTag/AnchorTag"

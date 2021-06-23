@@ -1,4 +1,3 @@
-import React from "react"
 import { FiGithub, FiTwitter, FiLinkedin } from "react-icons/fi"
 import { useAvatar } from "../../../hooks/useAvatar.js"
 import { userConfig } from "../../../_Config/userConfig.js"

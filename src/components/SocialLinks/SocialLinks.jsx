@@ -1,4 +1,3 @@
-import React from "react"
 import { socialLinks } from "../../_Config/socialLinks"
 import FacebookCard from "./LinksCards/FacebookCard/FacebookCard"
 import LinkedinCard from "./LinksCards/LinkedinCard/LinkedinCard"

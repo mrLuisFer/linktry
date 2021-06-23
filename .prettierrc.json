@@ -2,5 +2,6 @@
   "endOfLine": "lf",
   "jsxSingleQuote": true,
   "useTabs": false,
-  "semi": false
+  "semi": false,
+  "singleQuote": true
 }
