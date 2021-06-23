@@ -1,9 +1,9 @@
-import React from 'react'
-import { FiGithub, FiTwitter, FiLinkedin } from 'react-icons/fi'
-import { useAvatar } from '../../../hooks/useAvatar.js'
-import { userConfig } from '../../../_Config/userConfig.js'
-import { socialLinks } from '../../../_Config/socialLinks'
-import AnchorTag from '../../AnchorTag/AnchorTag'
+import React from "react"
+import { FiGithub, FiTwitter, FiLinkedin } from "react-icons/fi"
+import { useAvatar } from "../../../hooks/useAvatar.js"
+import { userConfig } from "../../../_Config/userConfig.js"
+import { socialLinks } from "../../../_Config/socialLinks"
+import AnchorTag from "../../AnchorTag/AnchorTag"
 
 export default function AvatarModal() {
   const { avatar, firstName, lastName, username, about, country, state } =
@@ -12,7 +12,7 @@ export default function AvatarModal() {
   const { avatarFetched } = useAvatar({ avatarUrl: avatar })
 
   const urlIconClassName =
-    'transform hover:scale-110 text-gray-800 dark:text-gray-300 p-2 hover:bg-gray-800 hover:text-gray-100 rounded-lg'
+    "transform hover:scale-110 text-gray-800 dark:text-gray-300 p-2 hover:bg-gray-800 hover:text-gray-100 rounded-lg"
 
   return (
     <div className='mt-4'>
@@ -28,6 +28,7 @@ export default function AvatarModal() {
         <h1 className='text-center text-2xl font-medium text-gray-800 dark:text-indigo-50 select-none'>
           {firstName} {lastName}
         </h1>
+        <p className='text-center w-full text-sm opacity-70 animate-pulse'>@{username}</p>
         <div className='flex justify-center gap-x-9 m-1 text-xl'>
           <AnchorTag
             hrefUrl={socialLinks.twitter.url}
@@ -56,7 +57,7 @@ export default function AvatarModal() {
         {country.length > 0 ? (
           <span className='text-xs capitalize'>{country}</span>
         ) : (
-          ''
+          ""
         )}
         {state.length > 0 ? (
           <>
@@ -64,7 +65,7 @@ export default function AvatarModal() {
             <span className='text-xs capitalize'>{state}</span>
           </>
         ) : (
-          ''
+          ""
         )}
       </div>
     </div>
