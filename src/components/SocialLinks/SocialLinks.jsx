@@ -13,15 +13,15 @@ import PortfolioCard from "./LinksCards/PortfolioCard/PortfolioCard"
 export default function SocialLinks() {
   return (
     <div className='my-5 px-4 sm:px-0'>
-      <TwitterCard twitterSocialLink={socialLinks.twitter} />
-      <TwitchCard twitchSocialLink={socialLinks.twitch} />
-      <FacebookCard facebookSocialLink={socialLinks.facebook} />
-      <LinkedinCard linkedinSocialLink={socialLinks.linkedin} />
-      <RedditCard redditSocialLink={socialLinks.reddit} />
-      <GithubCard githubSocialLink={socialLinks.github} />
-      <BehanceCard behanceSocialLink={socialLinks.behance} />
-      <InstagramCard instagramSocialLink={socialLinks.instagram} />
       <PortfolioCard portfolioSocialLink={socialLinks.portfolio} />
+      <LinkedinCard linkedinSocialLink={socialLinks.linkedin} />
+      <GithubCard githubSocialLink={socialLinks.github} />
+      <TwitterCard twitterSocialLink={socialLinks.twitter} />
+      <BehanceCard behanceSocialLink={socialLinks.behance} />
+      <FacebookCard facebookSocialLink={socialLinks.facebook} />
+      <RedditCard redditSocialLink={socialLinks.reddit} />
+      <TwitchCard twitchSocialLink={socialLinks.twitch} />
+      <InstagramCard instagramSocialLink={socialLinks.instagram} />
     </div>
   )
 }
