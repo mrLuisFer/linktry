@@ -9,6 +9,7 @@ module.exports = {
       ...defaultTheme.screens,
     },
     extend: {
+      textDecoration: ['focus-visible'],
       colors: {
         twitterColor: 'var(--twitter-color)',
         redditColor: 'var(--reddit-color)',
