@@ -37,11 +37,9 @@ export default function BaseCard({
             <div className='flex gap-x-4'>
               <div
                 draggable='false'
-                className={`text-4xl md:text-5xl h-full my-auto mx-0 transform hover:scale-110 ${customIconClasses}`}
+                className={`text-4xl md:text-5xl h-full my-auto mx-0 transform hover:scale-110 text-white ${customIconClasses}`}
               >
-                <AnchorTag hrefUrl={url} customClasses='text-white'>
-                  {jsxIcon}
-                </AnchorTag>
+                {jsxIcon}
               </div>
               <div className='w-full'>
                 <div
@@ -54,11 +52,9 @@ export default function BaseCard({
                   >
                     {username.length > 0 ? username : 'Username'}
                   </h1>
-                  <AnchorTag hrefUrl={url}>
-                    <HiOutlineExternalLink
-                      className={`text-xl sm:text-2xl transform hover:scale-110 cursor-pointer ${customUrlIconClasses}`}
-                    />
-                  </AnchorTag>
+                  <HiOutlineExternalLink
+                    className={`text-xl sm:text-2xl transform hover:scale-110 cursor-pointer ${customUrlIconClasses}`}
+                  />
                 </div>
                 {description.length > 5 ? (
                   <p className='text-sm'>{description}</p>

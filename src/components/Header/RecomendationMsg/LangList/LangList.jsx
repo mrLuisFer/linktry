@@ -1,11 +1,12 @@
-import LangListItem from "./LangListItem"
+import LangListItem from './LangListItem'
+import { langs } from '../langs'
 
 export default function LangList({ setLanguage }) {
-  const langs = ["Spanish", "English"]
+  var langsArray = Object.keys(langs)
 
   return (
     <ul>
-      {langs.map((singleLang) => (
+      {langsArray.map((singleLang) => (
         <LangListItem
           setLanguage={setLanguage}
           lang={singleLang}

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Linktry",
+  "name": "Clone of Linktree a little more custom made with React & TailwindCss",
   "icons": [
     {
       "src": "favicon.svg",
@@ -11,5 +11,29 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#374151",
-  "background_color": "#D1D5DB"
+  "background_color": "#D1D5DB",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*", "ftp://*/*", "file://*/*"]
+    }
+  ],
+  "file_browser_handlers": [
+    {
+      "id": "open-as-pdf",
+      "default_title": "Open with PDF Viewer",
+      "file_filters": ["filesystem:*.pdf"]
+    }
+  ],
+  "web_accessible_resources": [
+    "content/web/viewer.html",
+    "http:/*",
+    "https:/*",
+    "ftp:/*",
+    "file:/*",
+    "chrome-extension:/*",
+    "blob:*",
+    "data:*",
+    "filesystem:/*",
+    "drive:*"
+  ]
 }

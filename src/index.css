@@ -6,6 +6,7 @@
   --reddit-color: #ff5700;
   --github-color: #171515;
   --behance-color: #053eff;
+  --yellow-color: #fcd34d;
 }
 
 @tailwind base;
