@@ -22,4 +22,13 @@ export const langs = {
       コンテンツが見やすくなるように、ダークモードを試すことをお勧めします。
     </p>
   ),
+  german: (
+    <>
+      <p>
+        Wir empfehlen Ihnen, den Dunkelmodus auszuprobieren, damit Sie den
+        Inhalt besser sehen können
+      </p>
+      <p>By Catalina ♥</p>
+    </>
+  ),
 }
