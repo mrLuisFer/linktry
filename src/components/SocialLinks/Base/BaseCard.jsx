@@ -22,7 +22,7 @@ export default function BaseCard({
   customUsernameClasses = '',
   customIconClasses = '',
   customCardClasses = '',
-  customUrlIconClasses = '',
+  customUrlIconClasses = ''
 }) {
   return (
     <>

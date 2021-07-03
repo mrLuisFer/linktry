@@ -7,7 +7,7 @@ export default function Avatar() {
   const avatarUrl = userConfig.avatar
   const altUsernameImg = `${userConfig.username} - avatar`
   const { isLoading, isErrorAvatarUrl, avatarFetched } = useAvatar({
-    avatarUrl,
+    avatarUrl
   })
 
   const fullName = useGetFullName(userConfig)

@@ -1,5 +1,5 @@
-import BaseCard from "../../Base/BaseCard"
-import "./portfolioCard.css"
+import BaseCard from '../../Base/BaseCard'
+import './portfolioCard.css'
 
 export default function PortfolioCard({ portfolioSocialLink }) {
   const { username, url, description } = portfolioSocialLink

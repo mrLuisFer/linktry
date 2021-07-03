@@ -1,4 +1,4 @@
-export default function LangListItem({ lang = "", setLanguage }) {
+export default function LangListItem({ lang = '', setLanguage }) {
   return (
     <li
       onClick={() => setLanguage(`${lang.toLocaleLowerCase()}`)}

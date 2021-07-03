@@ -30,5 +30,5 @@ export const langs = {
       </p>
       <p>By Catalina ♥</p>
     </>
-  ),
+  )
 }
