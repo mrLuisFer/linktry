@@ -1,8 +1,12 @@
 import { StrictMode } from 'react'
 import { render } from 'react-dom'
-import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+/* 
+  Have to use the index.css inside /src 
+  since when using tailwindCss the utils must be imported
+*/
+import './index.css'
 
 const root = document.getElementById('root')
 

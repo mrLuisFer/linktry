@@ -19,7 +19,8 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "format": "npx prettier --write .",
-    "check": "npx prettier --check ."
+    "check": "npx prettier --check .",
+    "lint": "eslint . --fix"
   },
   "eslintConfig": {
     "extends": [
