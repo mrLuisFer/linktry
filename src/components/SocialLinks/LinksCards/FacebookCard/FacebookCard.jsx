@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaFacebookF } from 'react-icons/fa'
 import BaseCard from '../../Base/BaseCard'
 import './facebookCard.css'

@@ -1,4 +1,3 @@
-import React from 'react'
 import BaseCard from '../../Base/BaseCard'
 import { FaLinkedinIn } from 'react-icons/fa'
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import { ImTwitch } from 'react-icons/im'
 import BaseCard from '../../Base/BaseCard'
 import './twitchHover.css'

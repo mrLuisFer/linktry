@@ -1,4 +1,3 @@
-import React from 'react'
 import About from '../../components/About/About'
 import Avatar from '../../components/Avatar/Avatar'
 import Header from '../../components/Header/Header'

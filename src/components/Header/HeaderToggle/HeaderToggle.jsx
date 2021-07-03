@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react"
-import HeaderToggleHtml from "./HeaderToggleHtml"
-import RecomendationMsg from "../RecomendationMsg/RecomendationMsg"
-import { useSetDarkMode } from "../../../hooks/useSetDarkMode"
+import { useState, useEffect } from 'react'
+import HeaderToggleHtml from './HeaderToggleHtml'
+import RecomendationMsg from '../RecomendationMsg/RecomendationMsg'
+import { useSetDarkMode } from '../../../hooks/useSetDarkMode'
 
 export default function HeaderToggle() {
   const [closeMsg, setCloseMsg] = useState(false)
@@ -9,7 +9,7 @@ export default function HeaderToggle() {
   const { isDarkMode, handleClickToggleDarkMode, icon } = useSetDarkMode()
 
   useEffect(() => {
-    const localStgValue = localStorage.getItem("closedMsg")
+    const localStgValue = localStorage.getItem('closedMsg')
     if (localStgValue) {
       setCloseMsg(true)
     }
@@ -22,7 +22,7 @@ export default function HeaderToggle() {
         handleClickToggleDarkMode={handleClickToggleDarkMode}
         icon={icon}
       />
-      {closeMsg ? "" : <RecomendationMsg setCloseMsg={setCloseMsg} />}
+      {!closeMsg && <RecomendationMsg setCloseMsg={setCloseMsg} />}
     </div>
   )
 }
