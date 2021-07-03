@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { IoIosArrowForward } from 'react-icons/io'
-import { userConfig } from '../../_Config/userConfig'
+import { userConfig } from '../../api/userConfig'
 
 export default function About() {
   const [showDescription, setShowDescription] = useState(false)
@@ -37,9 +37,7 @@ export default function About() {
           <div className='text-center p-3 pt-0'>
             <p className='text-sm md:text-base'>{about}</p>
           </div>
-        ) : (
-          ''
-        )}
+        ) : null}
       </div>
     </div>
   )

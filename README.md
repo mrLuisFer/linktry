@@ -3,7 +3,7 @@
 ## ⚡ About
 
 To use or deploy it you only need to modify the two files inside
-`/src/_Config`
+`/src/api`
 
 And add the information you want, the settings and use of this information is already programmed to appear on the page
 

@@ -1,6 +1,6 @@
 import { useGetFullName } from '../../hooks/useGetFullName'
 import { useAvatar } from '../../hooks/useAvatar'
-import { userConfig } from '../../_Config/userConfig'
+import { userConfig } from '../../api/userConfig'
 import AvatarHtml from './AvatarHtml'
 
 export default function Avatar() {

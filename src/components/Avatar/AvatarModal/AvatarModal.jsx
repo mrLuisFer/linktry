@@ -1,17 +1,12 @@
-import { FiGithub, FiTwitter, FiLinkedin } from 'react-icons/fi'
-import { useAvatar } from '../../../hooks/useAvatar.js'
-import { userConfig } from '../../../_Config/userConfig.js'
-import { socialLinks } from '../../../_Config/socialLinks'
-import AnchorTag from '../../AnchorTag/AnchorTag'
+import { useAvatar } from '../../../hooks/useAvatar'
+import { userConfig } from '../../../api/userConfig'
+import AvatarLinkTags from './AvatarLinkTags'
 
 export default function AvatarModal() {
   const { avatar, firstName, lastName, username, about, country, state } =
     userConfig
 
   const { avatarFetched } = useAvatar({ avatarUrl: avatar })
-
-  const urlIconClassName =
-    'transform hover:scale-110 text-gray-800 dark:text-gray-300 p-2 hover:bg-gray-800 hover:text-gray-100 rounded-lg'
 
   return (
     <div className='mt-4'>
@@ -30,43 +25,20 @@ export default function AvatarModal() {
         <p className='text-center w-full text-sm opacity-70 animate-pulse'>
           @{username}
         </p>
-        <div className='flex justify-center gap-x-9 m-1 text-xl'>
-          <AnchorTag
-            hrefUrl={socialLinks.twitter.url}
-            customClasses={urlIconClassName}
-          >
-            <FiTwitter />
-          </AnchorTag>
-          <AnchorTag
-            hrefUrl={socialLinks.github.url}
-            customClasses={urlIconClassName}
-          >
-            <FiGithub />
-          </AnchorTag>
-          <AnchorTag
-            hrefUrl={socialLinks.linkedin.url}
-            customClasses={urlIconClassName}
-          >
-            <FiLinkedin />
-          </AnchorTag>
-        </div>
+        <AvatarLinkTags />
       </div>
       <p className='text-sm text-center mb-2 max-w-screen-mb md:max-w-screen-sm mx-auto text-gray-800 dark:text-gray-200 leading-6'>
         {about}
       </p>
       <div className='flex justify-center gap-x-1 items-center my-3 max-w-screen-mb md:max-w-screen-sm mx-auto text-gray-800 dark:text-gray-200'>
-        {country.length > 0 ? (
+        {country.length > 0 && (
           <span className='text-xs capitalize'>{country}</span>
-        ) : (
-          ''
         )}
-        {state.length > 0 ? (
+        {state.length > 0 && (
           <>
             <span>|</span>
             <span className='text-xs capitalize'>{state}</span>
           </>
-        ) : (
-          ''
         )}
       </div>
     </div>
