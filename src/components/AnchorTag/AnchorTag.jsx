@@ -4,7 +4,7 @@
  * @param {String} customClasses - Tailwind classes
  * @returns {JSX.Elment}
  */
-export default function AnchorTag({ children, hrefUrl, customClasses = "" }) {
+export default function AnchorTag({ children, hrefUrl, customClasses = '' }) {
   return (
     <a
       href={hrefUrl}

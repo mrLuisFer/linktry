@@ -1,7 +1,7 @@
 export default function HeaderToggleHtml({
   isDarkMode,
   handleClickToggleDarkMode,
-  icon,
+  icon
 }) {
   return (
     <div className='flex flex-col userNoSelect sm:transition-transform sm:scale-110 md:scale-125'>

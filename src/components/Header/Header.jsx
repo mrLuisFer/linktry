@@ -1,5 +1,5 @@
-import Linktree from "../../assets/linktree.svg"
-import HeaderToggle from "./HeaderToggle/HeaderToggle"
+import Linktree from '../../assets/linktree.svg'
+import HeaderToggle from './HeaderToggle/HeaderToggle'
 
 export default function Header() {
   return (

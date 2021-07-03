@@ -1,7 +1,7 @@
-import { useState } from "react"
-import Loader from "../Loader/Loader"
-import Modal from "../Modal/Modal"
-import AvatarModal from "./AvatarModal/AvatarModal"
+import { useState } from 'react'
+import Loader from '../Loader/Loader'
+import Modal from '../Modal/Modal'
+import AvatarModal from './AvatarModal/AvatarModal'
 
 export default function AvatarHtml({
   fullName,
@@ -9,7 +9,7 @@ export default function AvatarHtml({
   isLoading,
   isErrorAvatarUrl,
   userConfig,
-  avatarFetched,
+  avatarFetched
 }) {
   const [showModal, setShowModal] = useState(false)
 
@@ -26,7 +26,7 @@ export default function AvatarHtml({
             alt={altUsernameImg}
             title={
               isErrorAvatarUrl
-                ? "An error loading your avatar image"
+                ? 'An error loading your avatar image'
                 : altUsernameImg
             }
             className='block mx-auto rounded-full cursor-pointer select-none removeBlueHighlight w-36 h-36 md:w-44 md:h-44 transition transform hover:scale-105 lg:w-48 lg:h-48'
@@ -39,7 +39,7 @@ export default function AvatarHtml({
               <AvatarModal />
             </Modal>
           ) : (
-            ""
+            ''
           )}
         </div>
       )}
