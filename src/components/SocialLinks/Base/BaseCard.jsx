@@ -44,7 +44,7 @@ export default function BaseCard({
               <div className='w-full'>
                 <div
                   className={`flex justify-between items-center ${
-                    description.length > 5 ? '' : 'h-full'
+                    !description.length > 5 && 'h-full'
                   }`}
                 >
                   <h1
@@ -56,10 +56,8 @@ export default function BaseCard({
                     className={`text-xl sm:text-2xl transform hover:scale-110 cursor-pointer ${customUrlIconClasses}`}
                   />
                 </div>
-                {description.length > 5 ? (
+                {description.length > 5 && (
                   <p className='text-sm'>{description}</p>
-                ) : (
-                  ''
                 )}
               </div>
             </div>

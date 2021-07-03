@@ -33,11 +33,11 @@ export default function About() {
             }`}
           />
         </div>
-        {showDescription && about.length > 5 ? (
+        {showDescription && about.length > 5 && (
           <div className='text-center p-3 pt-0'>
             <p className='text-sm md:text-base'>{about}</p>
           </div>
-        ) : null}
+        )}
       </div>
     </div>
   )
