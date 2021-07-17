@@ -30,7 +30,7 @@ export default function BaseCard({
         <div
           className={`
               bg-gray-200 dark:bg-gray-700 p-4 rounded-lg my-6 sm:my-8 md:my-12 transition-shadow hover:shadow-md removeBlueHighlight hoverBaseCard ${customCardClasses} w-64 mb:w-10/12 sm:w-full mx-auto
-              focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 group
+              focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 group filter hover:brightness-105
             `}
         >
           <AnchorTag hrefUrl={url}>
