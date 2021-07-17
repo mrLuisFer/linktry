@@ -22,7 +22,7 @@ export default function RecomendationMsg({ setCloseMsg }) {
               showLangs ? 'animate-pulse' : 'animate-spin'
             }`}
           />
-          {showLangs ? <LangList setLanguage={setLanguage} /> : ''}
+          {showLangs && <LangList setLanguage={setLanguage} />}
         </div>
         <IoCloseSharp
           className='cursor-pointer select-none transform hover:scale-110'
