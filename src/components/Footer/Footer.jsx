@@ -1,3 +1,9 @@
+/*
+
+  If you follow the project license, you must make attribution to 
+  the creator, either in the footer or in the Readme
+
+*/
 export default function Footer() {
   return (
     <div className='mt-9 w-full'>
