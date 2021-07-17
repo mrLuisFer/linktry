@@ -12,8 +12,6 @@ export default function Avatar() {
 
   const fullName = useGetFullName(userConfig)
 
-  console.log(fullName)
-
   return (
     <AvatarHtml
       fullName={fullName}
