@@ -12,7 +12,7 @@ import CvCard from './LinksCards/CvCard/CvCard'
 
 export default function SocialLinks() {
   return (
-    <div className='my-5 px-4 sm:px-0'>
+    <section className='my-5 px-4 sm:px-0'>
       <PortfolioCard portfolioSocialLink={socialLinks.portfolio} />
       <LinkedinCard linkedinSocialLink={socialLinks.linkedin} />
       <GithubCard githubSocialLink={socialLinks.github} />
@@ -23,6 +23,6 @@ export default function SocialLinks() {
       <TwitchCard twitchSocialLink={socialLinks.twitch} />
       <InstagramCard instagramSocialLink={socialLinks.instagram} />
       <CvCard cvSocialLink={socialLinks.cv} />
-    </div>
+    </section>
   )
 }

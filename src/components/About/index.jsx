@@ -12,8 +12,8 @@ export default function About() {
   const about = userConfig.about
 
   return (
-    <div>
-      <div
+    <>
+      <section
         className={`w-60 bg-gray-300 dark:bg-gray-900 rounded-lg mx-auto shadow-sm hover:shadow mb:w-72 sm:w-80 md:w-96 transition-all filter hover:brightness-105 ${
           showDescription && 'border-2 dark:border-blue-700 border-green-400'
         }`}
@@ -39,7 +39,7 @@ export default function About() {
             <p className='text-sm mb:text-base'>{about}</p>
           </div>
         )}
-      </div>
-    </div>
+      </section>
+    </>
   )
 }

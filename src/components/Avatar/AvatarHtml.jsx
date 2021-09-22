@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Loader from '../Loader/Loader'
+import Loader from '../Loader'
 import Modal from '../Modal/Modal'
 import AvatarModal from './AvatarModal/AvatarModal'
 
@@ -14,9 +14,10 @@ export default function AvatarHtml({
   const [showModal, setShowModal] = useState(false)
 
   const closeModal = () => setShowModal(false)
+  const openModal = () => setShowModal(true)
 
   return (
-    <div className='py-8 flex flex-col md:max-w-2xl md:mx-auto'>
+    <section className='py-8 flex flex-col md:max-w-2xl md:mx-auto'>
       {isLoading ? (
         <Loader />
       ) : (
@@ -31,7 +32,7 @@ export default function AvatarHtml({
             }
             className='block mx-auto rounded-full cursor-pointer select-none removeBlueHighlight w-36 h-36 md:w-44 md:h-44 transition transform hover:scale-105 lg:w-48 lg:h-48'
             aria-hidden='true'
-            onClick={() => setShowModal(true)}
+            onClick={openModal}
             draggable='false'
           />
           {showModal ? (
@@ -49,6 +50,6 @@ export default function AvatarHtml({
       >
         {fullName}
       </h1>
-    </div>
+    </section>
   )
 }

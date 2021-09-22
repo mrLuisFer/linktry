@@ -1,4 +1,6 @@
-export const useGetFullName = (userConfig = {}) => {
+export const useGetFullName = (
+  userConfig = { firstName: '', username: '', lastName: '' }
+) => {
   const firstNameLength = userConfig.firstName.length
   const lastNameLength = userConfig.lastName.length
   let fullName = ''
