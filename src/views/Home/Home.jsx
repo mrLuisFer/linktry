@@ -1,8 +1,8 @@
-import About from '../../components/About/About'
-import Avatar from '../../components/Avatar/Avatar'
-import Header from '../../components/Header/Header'
-import SocialLinks from '../../components/SocialLinks/SocialLinks'
-import Footer from '../../components/Footer/Footer'
+import About from '../../components/About'
+import Avatar from '../../components/Avatar'
+import Header from '../../components/Header'
+import SocialLinks from '../../components/SocialLinks'
+import Footer from '../../components/Footer'
 
 export default function Home() {
   return (

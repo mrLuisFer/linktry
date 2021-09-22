@@ -14,7 +14,7 @@ export default function About() {
   return (
     <div>
       <div
-        className={`w-60 bg-gray-300 dark:bg-gray-900 rounded-lg mx-auto transition-shadow shadow-sm hover:shadow mb:72 sm:w-80 md:w-96 transition-all filter hover:brightness-105 ${
+        className={`w-60 bg-gray-300 dark:bg-gray-900 rounded-lg mx-auto shadow-sm hover:shadow mb:w-72 sm:w-80 md:w-96 transition-all filter hover:brightness-105 ${
           showDescription && 'border-2 dark:border-blue-700 border-green-400'
         }`}
         title={`About ${userConfig.username}`}
@@ -35,8 +35,8 @@ export default function About() {
           />
         </div>
         {showDescription && about.length > 5 && (
-          <div className='text-center p-3 pt-0'>
-            <p className='text-sm md:text-base'>{about}</p>
+          <div className='text-center p-3 mb:px-4 pt-0'>
+            <p className='text-sm mb:text-base'>{about}</p>
           </div>
         )}
       </div>
