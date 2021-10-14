@@ -10,5 +10,5 @@ Although I also like to develop backend applications or discord bots`,
   phoneNumber: '',
   country: 'Mexico',
   state: 'Morelia',
-  university: ''
+  university: 'Tecnologico de Morelia'
 }
