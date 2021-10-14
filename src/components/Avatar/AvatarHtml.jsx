@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import Loader from '../Loader'
 import Modal from '../Modal/Modal'
 import AvatarModal from './AvatarModal/AvatarModal'
@@ -8,14 +7,12 @@ export default function AvatarHtml({
   altUsernameImg,
   isLoading,
   isErrorAvatarUrl,
-  userConfig,
-  avatarFetched
+  avatarFetched,
+  closeModal,
+  openModal,
+  showModal,
+  username
 }) {
-  const [showModal, setShowModal] = useState(false)
-
-  const closeModal = () => setShowModal(false)
-  const openModal = () => setShowModal(true)
-
   return (
     <section className='py-8 flex flex-col md:max-w-2xl md:mx-auto'>
       {isLoading ? (
@@ -46,7 +43,7 @@ export default function AvatarHtml({
       )}
       <h1
         className='inline-block w-auto mx-auto mt-6 text-2xl font-semibold text-center border-b-4 border-green-500 md:text-3xl'
-        title={userConfig.username}
+        title={username}
       >
         {fullName}
       </h1>

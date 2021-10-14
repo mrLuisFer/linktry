@@ -2,10 +2,10 @@ import { FiGithub, FiTwitter, FiLinkedin } from 'react-icons/fi'
 import { socialLinks } from '../../../api/socialLinks'
 import AnchorTag from '../../AnchorTag/AnchorTag'
 
-export default function AvatarLinkTags() {
-  const urlIconClassName =
-    'transform hover:scale-110 text-gray-800 dark:text-gray-300 p-2 hover:bg-gray-800 hover:text-gray-100 rounded-lg'
+const urlIconClassName =
+  'transform hover:scale-110 text-gray-800 dark:text-gray-300 p-2 hover:bg-gray-800 hover:text-gray-100 rounded-lg'
 
+export default function AvatarLinkTags() {
   return (
     <div className='flex justify-center gap-x-9 m-1 text-xl'>
       <AnchorTag
