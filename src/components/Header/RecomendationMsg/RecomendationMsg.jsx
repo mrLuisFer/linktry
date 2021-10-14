@@ -18,14 +18,14 @@ export default function RecomendationMsg({ setCloseMsg }) {
         <div>
           <IoLanguageSharp
             onClick={() => setShowLangs(!showLangs)}
-            className={`cursor-pointer transform hover:scale-110 select-none ${
-              showLangs ? 'animate-pulse' : 'animate-spin'
+            className={`cursor-pointer transform hover:scale-110 select-none transition-colors hover:text-blue-300 ${
+              showLangs && 'text-blue-300'
             }`}
           />
           {showLangs && <LangList setLanguage={setLanguage} />}
         </div>
         <IoCloseSharp
-          className='cursor-pointer select-none transform hover:scale-110'
+          className='cursor-pointer select-none transform hover:scale-110 text-red-400 hover:text-red-500'
           onClick={handleCloseMsg}
         />
       </div>
