@@ -8,7 +8,7 @@ export const useAvatar = ({
   const [isErrorAvatarUrl, setIsErrorAvatarUrl] = useState(false)
   const [avatarFetched, setAvatarFetched] = useState('')
 
-  const fetchingAvatar = useCallback(() => {
+  const fetchAvatar = useCallback(() => {
     const throwError = () => {
       setIsErrorAvatarUrl(true)
       setIsLoading(false)
@@ -22,10 +22,10 @@ export const useAvatar = ({
       setIsErrorAvatarUrl(false)
       setAvatarFetched(avatarUrl)
     }
-  })
+  }, [avatarUrl])
 
   useEffect(() => {
-    fetchingAvatar()
+    fetchAvatar()
   }, [])
 
   return {

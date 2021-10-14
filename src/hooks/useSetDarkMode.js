@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { RiMoonClearFill } from 'react-icons/ri'
 import { FaLightbulb } from 'react-icons/fa'
 
@@ -24,7 +24,7 @@ export const useSetDarkMode = () => {
     setIcon(isChecked ? darkIcon : lightIcon)
   }
 
-  const checkTheme = () => {
+  const checkTheme = useCallback(() => {
     if (!theme) {
       localStorage.setItem('theme', 'light')
     }
@@ -37,7 +37,7 @@ export const useSetDarkMode = () => {
     }
     setIcon(isDarkTheme ? darkIcon : lightIcon)
     setIsDarkMode(isDarkTheme)
-  }
+  }, [theme])
 
   useEffect(() => {
     checkTheme()
