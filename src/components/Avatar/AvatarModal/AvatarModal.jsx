@@ -1,19 +1,20 @@
 import { useAvatar } from '../../../hooks/useAvatar'
 import { userConfig } from '../../../api/userConfig'
 import AvatarLinkTags from './AvatarLinkTags'
+import AvatarFooter from './AvatarFooter'
+
+const {
+  avatar,
+  firstName,
+  lastName,
+  username,
+  about,
+  country,
+  state,
+  university
+} = userConfig
 
 export default function AvatarModal() {
-  const {
-    avatar,
-    firstName,
-    lastName,
-    username,
-    about,
-    country,
-    state,
-    university
-  } = userConfig
-
   const { avatarFetched } = useAvatar({ avatarUrl: avatar })
 
   return (
@@ -38,29 +39,7 @@ export default function AvatarModal() {
       <p className='mx-auto mb-2 text-sm text-center text-gray-800 max-w-screen-mb md:max-w-screen-sm dark:text-gray-200 leading-6'>
         {about}
       </p>
-      <div className='flex items-center justify-center mx-auto my-3 text-gray-800 gap-x-1 max-w-screen-mb md:max-w-screen-sm dark:text-gray-200'>
-        {country.length > 0 && (
-          <span title='Country' className='text-xs capitalize'>
-            {country}
-          </span>
-        )}
-        {state.length > 0 && (
-          <>
-            <span>|</span>
-            <span title='State' className='text-xs capitalize'>
-              {state}
-            </span>
-          </>
-        )}
-        {university.length > 0 && (
-          <>
-            <span>|</span>
-            <span title='University' className='text-xs capitalize'>
-              {university}
-            </span>
-          </>
-        )}
-      </div>
+      <AvatarFooter country={country} state={state} university={university} />
     </div>
   )
 }
