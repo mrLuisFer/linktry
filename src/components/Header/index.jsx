@@ -11,7 +11,7 @@ export default function Header() {
           className='animate-pulse h-8 w-8'
           title='Linktry'
         />
-        Linktry
+        <span>Linktry</span>
       </h1>
       <HeaderToggle />
     </section>
