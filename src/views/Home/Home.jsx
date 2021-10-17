@@ -6,12 +6,12 @@ import Footer from '../../components/Footer'
 
 export default function Home() {
   return (
-    <div className='sm:mx-auto min-h-screen md:w-3/5'>
+    <section className='sm:mx-auto min-h-screen md:w-3/5'>
       <Header />
       <Avatar />
       <About />
       <SocialLinks />
       <Footer />
-    </div>
+    </section>
   )
 }

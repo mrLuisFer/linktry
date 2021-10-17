@@ -25,7 +25,7 @@ export default function Modal({ children, elementId = '', closeModalFunc }) {
   return (
     <>
       {createPortal(
-        <div
+        <section
           className={`fixed inset-0 bg-black bg-opacity-50 min-h-screen px-4 sm:px-0 ${
             expandWindowModal ? 'pt-4' : 'pt-4 sm:pt-8 md:pt-10'
           } `}
@@ -49,7 +49,7 @@ export default function Modal({ children, elementId = '', closeModalFunc }) {
             </div>
             {children}
           </div>
-        </div>,
+        </section>,
         document.getElementById(`${elementId}`)
       )}
     </>
