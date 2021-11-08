@@ -7,9 +7,7 @@ const Router = () => {
       <Route exact path='/'>
         <Home />
       </Route>
-      <Route path='*'>
-        <Redirect to='/' />
-      </Route>
+      <Route path='*' render={() => <Redirect to='/' />}></Route>
     </Switch>
   )
 }
