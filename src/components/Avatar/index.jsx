@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useGetFullName } from '../../hooks/useGetFullName'
 import { useAvatar } from '../../hooks/useAvatar'
 import { userConfig } from '../../api/userConfig'
 import AvatarHtml from './AvatarHtml'
@@ -11,7 +10,13 @@ export default function Avatar() {
   const { isLoading, isErrorAvatarUrl, avatarFetched } = useAvatar({
     avatarUrl
   })
-  const fullName = useGetFullName(userConfig)
+
+	const fullName = `${userConfig.firstName} ${userConfig.lastName}`
+  
+	if (fullName.length > 30) {
+    return userConfig.username
+  }
+
   const [showModal, setShowModal] = useState(false)
   const closeModal = () => setShowModal(false)
   const openModal = () => setShowModal(true)
