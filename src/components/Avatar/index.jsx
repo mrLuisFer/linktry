@@ -11,9 +11,9 @@ export default function Avatar() {
     avatarUrl
   })
 
-	const fullName = `${userConfig.firstName} ${userConfig.lastName}`
-  
-	if (fullName.length > 30) {
+  const fullName = `${userConfig.firstName} ${userConfig.lastName}`
+
+  if (fullName.length > 30) {
     return userConfig.username
   }
 
