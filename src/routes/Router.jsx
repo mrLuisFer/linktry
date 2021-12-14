@@ -1,4 +1,4 @@
-import Home from '../views/Home/Home'
+import Home from '../views/Home'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 const Router = () => {
