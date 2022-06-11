@@ -7,7 +7,9 @@ export default function RecomendationMsg({ setCloseMsg }) {
 
   const handleCloseMsg = () => {
     setCloseMsg(true)
-    localStorage.setItem('closedMsg', true)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('closedMsg', true)
+    }
   }
 
   return (

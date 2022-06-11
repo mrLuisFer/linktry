@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --twitter-color: #00acee;
+  --twitch-color: #6441a5;
+  --facebook-color: #4267b2;
+  --linkedin-color: #0072b1;
+  --reddit-color: #ff5700;
+  --github-color: #171515;
+  --behance-color: #053eff;
+  --yellow-color: #fcd34d;
+}
+
+html {
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+#root {
+  min-width: 100vw;
+  overflow-x: hidden;
+}
+
+.userNoSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* -webkit-tap-highlight-color: transparent; */
+  user-select: none;
+}
+
+.removeBlueHighlight {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* -webkit-tap-highlight-color: transparent; */
+}
+
+.hoverBaseCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.hoverBaseCard:hover {
+  box-shadow: 10px 10px 0px #a7a7a7;
+  top: -5px;
+  left: -5px;
+}
+
+.behanceCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.behanceCard:hover {
+  box-shadow: 10px 10px 0px var(--behance-color);
+  top: -5px;
+  left: -5px;
+}
+
+.cvCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.cvCard:hover {
+  box-shadow: 10px 10px 0px var(--yellow-color);
+  top: -5px;
+  left: -5px;
+}
+
+.twitterCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.twitterCard:hover {
+  box-shadow: 10px 10px 0px var(--twitter-color);
+  top: -5px;
+  left: -5px;
+}
+
+.twitchCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.twitchCard:hover {
+  box-shadow: 10px 10px 0px var(--twitch-color);
+  top: -5px;
+  left: -5px;
+}
+
+.redditCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.redditCard:hover {
+  box-shadow: 10px 10px 0px #ff4500;
+  top: -5px;
+  left: -5px;
+}
+
+.portfolioCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.portfolioCard:hover {
+  box-shadow: 10px 10px 0px #3351d6;
+  top: -5px;
+  left: -5px;
+}
+
+.linkedinCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.linkedinCard:hover {
+  box-shadow: 10px 10px 0px var(--linkedin-color);
+  top: -5px;
+  left: -5px;
+}
+
+.instagram {
+  background: #f09433;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.instagramCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.instagramCard:hover {
+  box-shadow: 10px 10px 0px #d63375;
+  top: -5px;
+  left: -5px;
+}
+
+.githubCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.githubCard:hover {
+  box-shadow: 10px 10px 0px var(--github-color);
+  top: -5px;
+  left: -5px;
+}
+
+.facebookCard {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.facebookCard:hover {
+  box-shadow: 10px 10px 0px var(--facebook-color);
+  top: -5px;
+  left: -5px;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #1683ff 94%, #0000) top/8px 8px
+      no-repeat,
+    conic-gradient(#0000 30%, #1683ff);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: s3 1s infinite linear;
+}
+
+@keyframes s3 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
