@@ -1,6 +1,6 @@
 {
   "name": "linktry",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "private": true,
   "dependencies": {
     "next": "^12.1.6",
@@ -15,12 +15,6 @@
     "dev": "next dev",
     "start": "next start",
     "build": "next build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
