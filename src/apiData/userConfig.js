@@ -1,6 +1,6 @@
 
 export const userConfig = {
-  avatar: '',
+  avatar: '/assets/avatar.jpg',
   firstName: 'Luis',
   lastName: 'Alvarez',
   username: 'mrLuisFer',
