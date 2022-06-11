@@ -6,7 +6,6 @@ export default function Document() {
     <Html lang='en'>
       <Head>
         <meta charset='utf-8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link href='https://github.com/mrluisfer' rel='preconnect' />
         <link rel='icon' href='/favicon.svg' />
         <meta name='theme-color' content='#1F2937' />
