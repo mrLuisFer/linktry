@@ -1,8 +1,6 @@
 import BaseCard from '../../Base/BaseCard'
 import { FaLinkedinIn } from 'react-icons/fa'
 
-import './linkedinCard.css'
-
 export default function LinkedinCard({ linkedinSocialLink }) {
   const { username, url, description } = linkedinSocialLink
 

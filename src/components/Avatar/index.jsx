@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useAvatar } from '../../hooks/useAvatar'
-import { userConfig } from '../../api/userConfig'
+import { userConfig } from '../../apiData/userConfig'
 import AvatarHtml from './AvatarHtml'
 
 const avatarUrl = userConfig.avatar

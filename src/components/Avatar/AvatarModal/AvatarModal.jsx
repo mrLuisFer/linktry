@@ -1,5 +1,5 @@
 import { useAvatar } from '../../../hooks/useAvatar'
-import { userConfig } from '../../../api/userConfig'
+import { userConfig } from '../../../apiData/userConfig'
 import AvatarLinkTags from './AvatarLinkTags'
 import AvatarFooter from './AvatarFooter'
 

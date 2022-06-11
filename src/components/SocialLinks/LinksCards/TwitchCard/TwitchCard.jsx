@@ -1,6 +1,5 @@
 import { ImTwitch } from 'react-icons/im'
 import BaseCard from '../../Base/BaseCard'
-import './twitchHover.css'
 
 export default function TwitchCard({ twitchSocialLink = {} }) {
   const { username, url, description } = twitchSocialLink

@@ -1,6 +1,5 @@
 import BaseCard from '../../Base/BaseCard'
 import { FaRedditAlien } from 'react-icons/fa'
-import './redditCard.css'
 
 export default function RedditCard({ redditSocialLink }) {
   const { username, url, description } = redditSocialLink

@@ -1,6 +1,5 @@
 import { FaFacebookF } from 'react-icons/fa'
 import BaseCard from '../../Base/BaseCard'
-import './facebookCard.css'
 
 export default function FacebookCard({ facebookSocialLink }) {
   const { username, url, description } = facebookSocialLink

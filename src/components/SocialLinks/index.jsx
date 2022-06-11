@@ -1,4 +1,4 @@
-import { socialLinks } from '../../api/socialLinks'
+import { socialLinks } from '../../apiData/socialLinks'
 import FacebookCard from './LinksCards/FacebookCard/FacebookCard'
 import LinkedinCard from './LinksCards/LinkedinCard/LinkedinCard'
 import TwitchCard from './LinksCards/TwitchCard/TwitchCard'

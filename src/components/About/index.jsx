@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { IoIosArrowForward } from 'react-icons/io'
-import { userConfig } from '../../api/userConfig'
+import { userConfig } from '../../apiData/userConfig'
 
 export default function About() {
   const [showDescription, setShowDescription] = useState(false)

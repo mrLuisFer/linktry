@@ -1,5 +1,5 @@
 import { FiGithub, FiTwitter, FiLinkedin } from 'react-icons/fi'
-import { socialLinks } from '../../../api/socialLinks'
+import { socialLinks } from '../../../apiData/socialLinks'
 import AnchorTag from '../../AnchorTag/AnchorTag'
 
 const urlIconClassName =

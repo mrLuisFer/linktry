@@ -1,6 +1,5 @@
 import BaseCard from '../../Base/BaseCard'
 import { AiOutlineFilePdf } from 'react-icons/ai'
-import './cvCard.css'
 
 export default function CvCard({ cvSocialLink }) {
   const { username, url, description } = cvSocialLink

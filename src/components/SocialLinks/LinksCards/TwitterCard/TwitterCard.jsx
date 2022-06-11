@@ -1,6 +1,5 @@
 import BaseCard from '../../Base/BaseCard'
 import { SiTwitter } from 'react-icons/si'
-import './twitterHover.css'
 
 export default function TwitterCard({ twitterSocialLink = {} }) {
   const { username, url, description } = twitterSocialLink

@@ -1,7 +1,6 @@
-import Avatar from '../assets/avatar.jpg'
 
 export const userConfig = {
-  avatar: Avatar,
+  avatar: '',
   firstName: 'Luis',
   lastName: 'Alvarez',
   username: 'mrLuisFer',

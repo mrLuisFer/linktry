@@ -1,6 +1,5 @@
 import BaseCard from '../../Base/BaseCard'
 import { SiGithub } from 'react-icons/si'
-import './githubCard.css'
 
 export default function GithubCard({ githubSocialLink }) {
   const { username, url, description } = githubSocialLink
