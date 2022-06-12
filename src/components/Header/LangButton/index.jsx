@@ -1,4 +1,5 @@
 import { IoLanguageSharp } from 'react-icons/io5'
+import { hoverEffect } from "../../../styles/hoverEffect.js"
 // Remove later
 import { useState, useEffect } from "react"
 
@@ -14,7 +15,7 @@ export default function LangButton() {
 
 	return (
 		<div className="relative">
-			<button type="button" title="Change language" onClick={() => setShowMsg(true)} className="text-xl hover:bg-slate-300 dark:hover:bg-gray-900 p-2 rounded-xl transition-colors">
+			<button type="button" title="Change language" onClick={() => setShowMsg(true)} className={`${hoverEffect} text-xl transition-colors p-2`}>
 				<IoLanguageSharp />
 			</button>
 			{showMsg && (
