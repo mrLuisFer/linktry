@@ -1,5 +1,6 @@
 import { IoLanguageSharp } from 'react-icons/io5'
-import { hoverEffect } from "../../../styles/hoverEffect.js"
+import { hoverEffect } from "../../../styles/hoverEffect"
+import LangsSelect from "./LangsSelect"
 // Remove later
 import { useState, useEffect } from "react"
 
@@ -9,7 +10,7 @@ export default function LangButton() {
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			setShowMsg(false)
-		}, 900)
+		}, 9000)
 		return () => clearTimeout(timeout)
 	}, [showMsg])
 
@@ -19,9 +20,7 @@ export default function LangButton() {
 				<IoLanguageSharp />
 			</button>
 			{showMsg && (
-				<div className="absolute right-6 px-4 py-2 bg-slate-200 dark:bg-slate-700 rounded-lg text-md ease-out">
-					<p>Comming soon...</p>
-				</div>
+				<LangsSelect />
 			)}
 		</div>
 	)

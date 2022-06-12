@@ -3,11 +3,6 @@ import { IoIosArrowForward } from 'react-icons/io'
 import { userConfig } from '../../apiData/userConfig'
 import { useLangContext } from "../../hooks/useLangContext"
 
-const LANGS = {
-  'es': "Acerca de",
-  'en': "About"
-}
-
 export default function About() {
   const [showDescription, setShowDescription] = useState(false)
   const { language } = useLangContext()
@@ -16,6 +11,10 @@ export default function About() {
     setShowDescription((prevState) => !prevState)
   }
 
+  const LANGS = {
+    'es': "Acerca de",
+    'en': "About"
+  }
   const about = userConfig.about
 
   return (
@@ -31,7 +30,7 @@ export default function About() {
           onClick={handleShowDescription}
         >
           <p className='font-semibold opacity-80'>
-            About {userConfig.firstName}
+            {LANGS[language]} {userConfig.firstName}
           </p>
           <IoIosArrowForward
             className={`transform transition-transform ${
