@@ -2,12 +2,18 @@ export const socialLinks = {
   twitter: {
     username: '_mrLuisFer',
     url: 'https://twitter.com/_mrLuisFer',
-    description: 'Student & Frontend Developer'
+    description: {
+      'en': 'Student & Frontend Developer',
+      'es': 'Estudiante & Frontend Developer',
+    }
   },
   facebook: {
     username: 'Luis Fer Alvarez',
     url: 'https://www.facebook.com/mrLuisFer/',
-    description: ''
+    description: {
+      'en': '',
+      'es': '',
+    }
   },
   linkedin: {
     username: 'Luis Alvarez',
@@ -22,7 +28,10 @@ export const socialLinks = {
   github: {
     username: 'mrLuisFer',
     url: 'https://github.com/mrLuisFer',
-    description: '⚛ Developing'
+    description: {
+      'en': 'Frontend Developer | 🪐 Web ⚡ JavaScript 💙 TypeScript | Learning cute things every day 🐙',
+      'es': 'Frontend Developer | 🪐 Web ⚡ JavaScript 💙 TypeScript | Aprendiendo cosas lindas todos los días. 🐙',
+    }
   },
   twitch: {
     username: '',
@@ -32,12 +41,18 @@ export const socialLinks = {
   portfolio: {
     username: 'My Portfolio',
     url: 'https://mrluisfer.netlify.app/',
-    description: 'Frontend Developer, specialized in Javascript & React for UI'
+    description: {
+      'en': 'Frontend Developer, specialized in Javascript & React for UI',
+      'es': 'Frontend Developer, especializado en Javascript & React para la UI',
+    }
   },
   behance: {
     username: 'mrLuisFer',
     url: 'https://www.behance.net/luisalvarez28',
-    description: 'Just some designs :D'
+    description: {
+      'en': 'Just some designs :D',
+      'es': 'Solo algunos diseños :D'
+    }
   },
   instagram: {
     username: 'mrluisfer_',
@@ -47,7 +62,9 @@ export const socialLinks = {
   cv: {
     username: 'Luis Fernando Alvarez',
     url: '/luis-alvarez-cv.pdf',
-    description:
-      'If you are a recruiter or in case you want to contact me for a project you can download my CV'
+    description: {
+      'en': 'If you are a recruiter or in case you want to contact me for a project you can download my CV',
+      'es': 'Si eres reclutador o en caso de que quieras contactarme para un proyecto puedes descargar mi CV'
+    }
   }
 }
