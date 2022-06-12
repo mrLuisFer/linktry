@@ -16,7 +16,7 @@ export default function LangButton() {
 
 	return (
 		<div className="relative">
-			<button type="button" title="Change language" onClick={() => setShowMsg(true)} className={`${hoverEffect} text-xl transition-colors p-2`}>
+			<button type="button" title="Change language" onClick={() => setShowMsg((prevState) => !prevState)} className={`${hoverEffect} text-xl transition-colors p-2`}>
 				<IoLanguageSharp />
 			</button>
 			{showMsg && (

@@ -1,6 +1,7 @@
 import { AiFillHeart } from 'react-icons/ai'
 import { HiOutlineExternalLink } from 'react-icons/hi'
 import AnchorTag from '../../AnchorTag/AnchorTag'
+import { useUserDescription } from "../../../hooks/useUserDescription"
 
 /**
  *
@@ -17,13 +18,15 @@ import AnchorTag from '../../AnchorTag/AnchorTag'
 export default function BaseCard({
   username = '',
   url = '',
-  description = '',
+  description,
   jsxIcon = <AiFillHeart />,
   customUsernameClasses = '',
   customIconClasses = '',
   customCardClasses = '',
   customUrlIconClasses = ''
 }) {
+  const descParsed = useUserDescription(description)
+
   return (
     <>
       {username.length > 0 && (
@@ -44,7 +47,7 @@ export default function BaseCard({
               </div>
               <div className='w-full'>
                 <div
-                  className={`flex justify-between items-center ${!description.length > 5 && 'h-full'
+                  className={`flex justify-between items-center ${!descParsed.length > 5 && 'h-full'
                     }`}
                 >
                   <h1
@@ -56,8 +59,8 @@ export default function BaseCard({
                     className={`text-xl sm:text-2xl transform hover:scale-110 cursor-pointer ${customUrlIconClasses}`}
                   />
                 </div>
-                {description.length > 5 && (
-                  <p className='text-sm'>{description}</p>
+                {descParsed.length > 5 && (
+                  <p className='text-sm'>{descParsed}</p>
                 )}
               </div>
             </div>

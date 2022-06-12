@@ -15,7 +15,7 @@ export default function About() {
     'es': "Acerca de",
     'en': "About"
   }
-  const about = userConfig.about
+  const about = userConfig.about[language]
 
   return (
     <>
