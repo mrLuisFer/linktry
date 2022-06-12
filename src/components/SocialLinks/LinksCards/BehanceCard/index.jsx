@@ -10,7 +10,7 @@ export default function BehanceCard({ behanceSocialLink }) {
       url={url}
       description={description}
       jsxIcon={<ImBehance />}
-      customCardClasses='behanceCard bg-gradient-to-r from-blue-500 to-blue-500'
+      customCardClasses='bg-gradient-to-r from-blue-500 to-blue-500 hover:shadow-[10px_10px_0px_var(--behance-color)]'
     />
   )
 }

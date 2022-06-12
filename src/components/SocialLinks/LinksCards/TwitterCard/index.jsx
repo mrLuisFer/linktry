@@ -10,7 +10,7 @@ export default function TwitterCard({ twitterSocialLink = {} }) {
       url={url}
       description={description}
       jsxIcon={<SiTwitter />}
-      customCardClasses='twitterCard dark:bg-opacity-20 bg-gradient-to-l from-blue-600 to-blue-500 dark:from-blue-500 dark:to-blue-600'
+      customCardClasses='dark:bg-opacity-20 bg-gradient-to-l from-blue-600 to-blue-500 dark:from-blue-500 dark:to-blue-600 hover:shadow-[10px_10px_0px_var(--twitter-color)]'
     />
   )
 }

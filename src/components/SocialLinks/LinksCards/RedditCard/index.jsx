@@ -10,7 +10,7 @@ export default function RedditCard({ redditSocialLink }) {
       url={url}
       description={description}
       jsxIcon={<FaRedditAlien />}
-      customCardClasses='redditCard bg-gradient-to-r dark:bg-gradient-to-l from-red-500 to-redditColor'
+      customCardClasses='bg-gradient-to-r dark:bg-gradient-to-l from-red-500 to-redditColor hover:shadow-[10px_10px_0px_#ff4500]'
     />
   )
 }

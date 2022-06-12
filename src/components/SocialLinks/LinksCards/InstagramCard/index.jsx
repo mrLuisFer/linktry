@@ -10,7 +10,7 @@ export default function InstagramCard({ instagramSocialLink }) {
       url={url}
       description={description}
       jsxIcon={<FiInstagram />}
-      customCardClasses='instagram instagramCard'
+      customCardClasses='instagram hover:shadow-[10px_10px_0px_#d63375]'
     />
   )
 }

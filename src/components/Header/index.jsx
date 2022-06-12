@@ -1,4 +1,5 @@
 import HeaderToggle from './HeaderToggle/HeaderToggle'
+import LangButton from './LangButton'
 
 export default function Header() {
   return (
@@ -12,7 +13,10 @@ export default function Header() {
         />
         <span>Linktry</span>
       </h1>
-      <HeaderToggle />
+      <div className="flex items-center gap-x-6">
+        <LangButton />
+        <HeaderToggle />
+      </div>
     </section>
   )
 }

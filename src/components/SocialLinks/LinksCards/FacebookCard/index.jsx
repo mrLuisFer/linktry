@@ -9,7 +9,7 @@ export default function FacebookCard({ facebookSocialLink }) {
       username={username}
       url={url}
       description={description}
-      customCardClasses='facebookCard bg-blue-700 dark:bg-blue-700'
+      customCardClasses='bg-blue-700 dark:bg-blue-700 hover:shadow-[10px_10px_0px_var(--facebook-color)]'
       jsxIcon={<FaFacebookF />}
     />
   )

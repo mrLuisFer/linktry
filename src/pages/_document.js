@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
-        <meta charset='utf-8' />
+        <meta charSet='utf-8' />
         <link href='https://github.com/mrluisfer' rel='preconnect' />
         <link rel='icon' href='/favicon.svg' />
         <meta name='theme-color' content='#1F2937' />

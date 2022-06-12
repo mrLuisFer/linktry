@@ -29,7 +29,8 @@ export default function BaseCard({
       {username.length > 0 && (
         <div
           className={`
-              bg-gray-200 dark:bg-gray-700 p-4 rounded-lg my-6 sm:my-8 md:my-12 transition-shadow hover:shadow-md removeBlueHighlight hoverBaseCard ${customCardClasses} w-64 mb:w-10/12 sm:w-full mx-auto
+              bg-gray-200 dark:bg-gray-700 p-4 rounded-lg my-6 sm:my-8 md:my-12 transition-shadow hover:shadow-md removeBlueHighlight ${customCardClasses}
+              relative top-0 left-0 hover:-top-1.5 hover:-left-1.5  w-64 mb:w-10/12 sm:w-full mx-auto
               focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 group filter hover:brightness-105
             `}
         >
@@ -43,9 +44,8 @@ export default function BaseCard({
               </div>
               <div className='w-full'>
                 <div
-                  className={`flex justify-between items-center ${
-                    !description.length > 5 && 'h-full'
-                  }`}
+                  className={`flex justify-between items-center ${!description.length > 5 && 'h-full'
+                    }`}
                 >
                   <h1
                     className={`font-semibold text-lg text-black dark:text-white ${customUsernameClasses} group-hover:underline`}

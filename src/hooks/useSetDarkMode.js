@@ -12,16 +12,12 @@ const darkIcon = <FaLightbulb title='Active light mode' />
 export const useSetDarkMode = () => {
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [icon, setIcon] = useState(lightIcon)
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== 'undefined') {
-      localStorage.getItem('theme') || 'light'
-    }
-  })
+  const [theme, setTheme] = useState("dark")
 
   const handleClickToggleDarkMode = (event) => {
+    const isChecked = event.target.checked
+    setIsDarkMode(isChecked)
     if (typeof window !== 'undefined') {
-      const isChecked = event.target.checked
-      setIsDarkMode(isChecked)
       if (isChecked) {
         body.classList.add('dark')
       } else {
@@ -34,7 +30,7 @@ export const useSetDarkMode = () => {
   }
 
   const checkTheme = useCallback(() => {
-    if (!theme && typeof window !== 'undefined') {
+    if (!theme) {
       localStorage.setItem('theme', 'light')
     }
 
@@ -49,9 +45,11 @@ export const useSetDarkMode = () => {
   }, [theme])
 
   useEffect(() => {
+    const theme = localStorage.getItem('theme')
     checkTheme()
-    // eslint-disable-next-line
+    setTheme(theme)
   }, [])
+
 
   return {
     isDarkMode,

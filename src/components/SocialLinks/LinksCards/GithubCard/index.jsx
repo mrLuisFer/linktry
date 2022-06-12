@@ -10,7 +10,7 @@ export default function GithubCard({ githubSocialLink }) {
       url={url}
       description={description}
       jsxIcon={<SiGithub />}
-      customCardClasses='githubCard bg-gradient-to-r from-gray-600 to-gray-500 dark:from-gray-900 dark:to-gray-900'
+      customCardClasses='bg-gradient-to-r from-gray-600 to-gray-500 dark:from-gray-900 dark:to-gray-900 hover:shadow-[10px_10px_0px_var(--github-color)]'
     />
   )
 }

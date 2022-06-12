@@ -9,7 +9,7 @@ export default function CvCard({ cvSocialLink }) {
       username={username}
       url={url}
       description={description}
-      customCardClasses='cvCard bg-yellow-400 dark:bg-yellow-600'
+      customCardClasses='bg-yellow-400 dark:bg-yellow-600 hover:shadow-[10px_10px_0px_var(--yellow-color)]'
       jsxIcon={<AiOutlineFilePdf />}
     />
   )

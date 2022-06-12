@@ -10,7 +10,7 @@ export default function LinkedinCard({ linkedinSocialLink }) {
       url={url}
       description={description}
       jsxIcon={<FaLinkedinIn />}
-      customCardClasses='linkedinCard bg-gradient-to-l from-blue-400 to-blue-500 dark:to-blue-500 dark:from-blue-700'
+      customCardClasses='bg-gradient-to-l from-blue-400 to-blue-500 dark:to-blue-500 dark:from-blue-700 hover:shadow-[10px_10px_0px_var(--linkedin-color)]'
     />
   )
 }

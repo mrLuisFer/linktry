@@ -10,7 +10,7 @@ export default function TwitchCard({ twitchSocialLink = {} }) {
       url={url}
       description={description}
       jsxIcon={<ImTwitch />}
-      customCardClasses='twitchCard bg-gradient-to-l from-purple-500 to-purple-600'
+      customCardClasses='bg-gradient-to-l from-purple-500 to-purple-600 hover:shadow-[10px_10px_0px_var(--twitch-color)]'
     />
   )
 }

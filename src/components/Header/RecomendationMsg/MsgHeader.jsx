@@ -10,6 +10,7 @@ const MsgHeader = ({ setLanguage, handleCloseMsg }) => {
       <div>
         <IoLanguageSharp
           onClick={() => setShowLangs(!showLangs)}
+          title="Change popup language"
           className={`cursor-pointer transform hover:scale-110 select-none transition-colors hover:text-blue-300 ${
             showLangs && 'text-blue-300'
           }`}

@@ -21,10 +21,8 @@ yarn-debug.log*
 yarn-error.log*
 
 .eslintcache
-
-
-# Created by https://www.toptal.com/developers/gitignore/api/reactnative,react,emacs,vim,visualstudiocode,jetbrains,webstorm
-# Edit at https://www.toptal.com/developers/gitignore?templates=reactnative,react,emacs,vim,visualstudiocode,jetbrains,webstorm
+yarn-lock.json
+package-lock.json
 
 ### Emacs ###
 # -*- mode: gitignore; -*-

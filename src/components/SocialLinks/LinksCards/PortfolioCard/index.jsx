@@ -8,7 +8,7 @@ export default function PortfolioCard({ portfolioSocialLink }) {
       username={username}
       url={url}
       description={description}
-      customCardClasses='portfolioCard bg-gradient-to-l from-green-400 to-green-500 dark:to-indigo-500 dark:from-indigo-400'
+      customCardClasses='bg-gradient-to-l to-indigo-500 from-indigo-400 hover:shadow-[10px_10px_0px_#3351d6]'
     />
   )
 }
