@@ -6,7 +6,7 @@ export default function LangContextProvider({children}) {
 	const [language, setLanguage] = useState("")
 
 	return (
-		<LangContext.Provider value={{language, setLanguage}}>
+		<LangContext.Provider value={{ language, setLanguage }}>
 			{children}
 		</LangContext.Provider>
 	)

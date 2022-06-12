@@ -1,9 +1,16 @@
 import { useState } from 'react'
 import { IoIosArrowForward } from 'react-icons/io'
 import { userConfig } from '../../apiData/userConfig'
+import { useLangContext } from "../../hooks/useLangContext"
+
+const LANGS = {
+  'es': "Acerca de",
+  'en': "About"
+}
 
 export default function About() {
   const [showDescription, setShowDescription] = useState(false)
+  const { language } = useLangContext()
 
   const handleShowDescription = () => {
     setShowDescription((prevState) => !prevState)
@@ -17,7 +24,7 @@ export default function About() {
         className={`w-60 bg-gray-300 dark:bg-gray-900 rounded-lg mx-auto shadow-sm hover:shadow mb:w-72 sm:w-80 md:w-96 transition-all filter hover:brightness-105 border-2 border-transparent  ${
           showDescription && 'dark:border-blue-700 border-green-400'
         }`}
-        title={`About ${userConfig.username}`}
+        title={`${LANGS[language]} ${userConfig.username}`}
       >
         <div
           className='userNoSelect flex justify-between items-center h-auto cursor-pointer py-3 px-4'
