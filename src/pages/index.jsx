@@ -1,13 +1,14 @@
-import Head from "next/head"
+import Head from 'next/head'
 import About from '../components/About'
 import Avatar from '../components/Avatar'
 import Header from '../components/Header'
 import SocialLinks from '../components/SocialLinks'
 import Footer from '../components/Footer'
+import Layout from '../components/Layout'
 
 export default function Home() {
   return (
-    <main className='text-gray-900 bg-gray-100 dark:bg-gray-800 dark:text-gray-50'>
+    <>
       <Head>
         <title>Linktry - mrLuisFer</title>
         <meta
@@ -23,13 +24,13 @@ export default function Home() {
           content='My own customized linktree with the links and cards a little more detailed and with more information'
         />
       </Head>
-      <section className='sm:mx-auto min-h-screen md:w-3/5'>
+      <Layout>
         <Header />
         <Avatar />
         <About />
         <SocialLinks />
         <Footer />
-      </section>
-    </main>
+      </Layout>
+    </>
   )
 }

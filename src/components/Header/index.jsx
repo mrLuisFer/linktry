@@ -1,4 +1,4 @@
-import HeaderToggle from './HeaderToggle/HeaderToggle'
+import HeaderToggle from './HeaderToggle'
 import LangButton from './LangButton'
 import { userConfig } from "../../apiData/userConfig"
 import Img from 'next/image'

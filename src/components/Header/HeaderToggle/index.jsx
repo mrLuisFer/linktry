@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import HeaderToggleHtml from './HeaderToggleHtml'
-import RecomendationMsg from '../RecomendationMsg/RecomendationMsg'
+import RecomendationMsg from '../RecomendationMsg'
 import { useSetDarkMode } from '../../../hooks/useSetDarkMode'
 
 export default function HeaderToggle() {

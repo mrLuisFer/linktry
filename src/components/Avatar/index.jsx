@@ -1,9 +1,10 @@
 import { useAvatar } from '../../hooks/useAvatar'
 import { userConfig } from '../../apiData/userConfig'
 import Loader from '../Loader'
+import Image from 'next/image'
 
 const avatarUrl = userConfig.avatar
-const altUsernameImg = `${userConfig.username} - avatar`
+const altUsernameImg = `${userConfig.username}`
 
 export default function Avatar() {
   const { isLoading, isErrorAvatarUrl, avatarFetched } = useAvatar({
@@ -22,18 +23,21 @@ export default function Avatar() {
         <Loader />
       ) : (
         <div className='lg:flex md:max-w-2xl'>
-          <img
-            src={avatarFetched}
-            alt={altUsernameImg}
-            title={
-              isErrorAvatarUrl
-                ? 'An error loading your avatar image'
-                : altUsernameImg
-            }
-            className='block mx-auto rounded-full cursor-pointer select-none removeBlueHighlight w-36 h-36 md:w-44 md:h-44 transition transform hover:scale-105 lg:w-48 lg:h-48'
-            aria-hidden='true'
-            draggable='false'
-          />
+          <div className='block mx-auto rounded-full select-none removeBlueHighlight w-36 h-36 md:w-44 md:h-44 transition transform hover:scale-110 lg:w-48 lg:h-48'>
+            <Image
+              src={avatarFetched}
+              alt={altUsernameImg}
+              layout='fill'
+              aria-hidden='true'
+              draggable='false'
+              className='rounded-full'
+              title={
+                isErrorAvatarUrl
+                  ? 'An error loading your avatar image'
+                  : altUsernameImg
+              }
+            />
+          </div>
         </div>
       )}
       <h1
