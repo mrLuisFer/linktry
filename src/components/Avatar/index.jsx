@@ -19,7 +19,7 @@ export default function Avatar() {
 
   return (
     <section className='py-8 flex flex-col md:max-w-2xl md:mx-auto'>
-      {isLoading ? (
+      {isLoading || isErrorAvatarUrl ? (
         <Loader />
       ) : (
         <div className='lg:flex md:max-w-2xl'>
@@ -31,11 +31,7 @@ export default function Avatar() {
               aria-hidden='true'
               draggable='false'
               className='rounded-full'
-              title={
-                isErrorAvatarUrl
-                  ? 'An error loading your avatar image'
-                  : altUsernameImg
-              }
+              title='An error loading your avatar image'
             />
           </div>
         </div>

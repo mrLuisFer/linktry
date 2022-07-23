@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import About from '../components/About'
 import Avatar from '../components/Avatar'
-import Header from '../components/Header'
 import SocialLinks from '../components/SocialLinks'
 import Footer from '../components/Footer'
 import Layout from '../components/Layout'
+import Header from '../components/Header'
 
 export default function Home() {
   return (
