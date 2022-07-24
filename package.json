@@ -3,12 +3,10 @@
   "version": "1.2.0",
   "private": true,
   "dependencies": {
-    "@prisma/client": "^4.1.0",
-    "@types/node": "^18.0.6",
+    "@next-auth/prisma-adapter": "^1.0.4",
     "framer-motion": "^6.4.3",
     "next": "^12.1.6",
     "next-auth": "^4.10.2",
-    "prisma": "^4.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
@@ -37,11 +35,15 @@
     ]
   },
   "devDependencies": {
+    "@prisma/client": "^4.1.0",
+    "@types/node": "^18.0.6",
+    "@types/react": "^18.0.15",
     "autoprefixer": "^10.4.7",
     "eslint": "^7.30.0",
     "eslint-config-next": "12.1.6",
     "postcss": "^8.4.14",
     "prettier": "2.4.1",
+    "prisma": "^4.1.0",
     "tailwindcss": "^3.1.2"
   }
 }

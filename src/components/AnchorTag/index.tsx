@@ -1,9 +1,4 @@
-/**
- * @param {JSX.Element} children
- * @param {String} hrefUrl - href is necessary
- * @param {String} customClasses - Tailwind classes
- * @returns {JSX.Elment}
- */
+
 export default function AnchorTag({
   children,
   hrefUrl,

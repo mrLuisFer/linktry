@@ -1,6 +1,5 @@
 import BaseCard from '../../Base/BaseCard'
 import { ImBehance } from 'react-icons/im'
-import { useLangContext } from "../../../../hooks/useLangContext"
 
 export default function BehanceCard({ behanceSocialLink }) {
   const { username, url, description } = behanceSocialLink

@@ -1,4 +1,5 @@
-export const langs = {
+
+const Langs = () => ({
   spanish: (
     <p>
       Te recomendamos probar el modo oscuro y asi puedas ver de mejor manera el
@@ -31,4 +32,6 @@ export const langs = {
       <p>By Catalina ♥</p>
     </>
   )
-}
+})
+
+export default Langs

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { langs } from './langs'
+import langs from './langs'
 import { Fade } from '../../Animated'
 import { IoLanguageSharp, IoCloseSharp } from 'react-icons/io5'
 import LangList from './LangList'
@@ -9,9 +9,9 @@ export default function RecomendationMsg({ setCloseMsg }) {
   const [showLangs, setShowLangs] = useState(false)
 
   const handleCloseMsg = () => {
-    setCloseMsg(true)
+    setCloseMsg('true')
     if (typeof window !== 'undefined') {
-      localStorage.setItem('closedMsg', true)
+      localStorage.setItem('closedMsg', 'true')
     }
   }
 

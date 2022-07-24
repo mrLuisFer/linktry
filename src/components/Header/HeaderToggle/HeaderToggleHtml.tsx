@@ -1,9 +1,10 @@
-import { hoverEffect } from '../../../styles/hoverEffect'
+import { hoverEffect } from '~/styles/hoverEffect'
+import { RiMoonClearFill } from 'react-icons/ri'
+import { FaLightbulb } from 'react-icons/fa'
 
 export default function HeaderToggleHtml({
   isDarkMode,
-  handleClickToggleDarkMode,
-  icon
+  handleClickToggleDarkMode
 }) {
   return (
     <div className='flex flex-col userNoSelect sm:transition-transform sm:scale-110 md:scale-125'>
@@ -23,14 +24,14 @@ export default function HeaderToggleHtml({
               id='toggleInput'
               name='toggleInput'
               type='checkbox'
-              onChange={handleClickToggleDarkMode}
+              onChange={(e) => handleClickToggleDarkMode(e)}
             />
           </span>
         </span>
         <span
-          className={`ml-3 text-md p-1.5 text-blue-600 dark:text-yellow-300 transform transition-transform hover:scale-110 ${hoverEffect}`}
+          className={`ml-3 text-md p-1.5 text-blue-600 dark:text-yellow-300 ${hoverEffect}`}
         >
-          {icon}
+          {isDarkMode ? <RiMoonClearFill /> : <FaLightbulb />}
         </span>
       </label>
     </div>

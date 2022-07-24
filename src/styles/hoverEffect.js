@@ -1,2 +1,2 @@
 export const hoverEffect =
-  'hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full hover:shadow'
+  'hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full hover:shadow transform active:scale-90'

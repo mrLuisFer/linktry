@@ -1,35 +1,20 @@
 import { AiFillHeart } from 'react-icons/ai'
 import { HiOutlineExternalLink } from 'react-icons/hi'
-import AnchorTag from '../../AnchorTag/AnchorTag'
-import { useUserDescription } from "../../../hooks/useUserDescription"
+import AnchorTag from '../../AnchorTag'
 
-/**
- *
- * @param {String} username
- * @param {String} url
- * @param {String} description
- * @param {JSX.Element} jsxIcon AiFillHeart
- * @param {String} customUsernameClasses
- * @param {String} customIconClasses
- * @param {String} customCardClasses
- * @param {String} customUrlIconClasses
- * @returns JSX.Element
- */
 export default function BaseCard({
   username = '',
   url = '',
-  description,
+  description = '',
   jsxIcon = <AiFillHeart />,
   customUsernameClasses = '',
   customIconClasses = '',
   customCardClasses = '',
   customUrlIconClasses = ''
 }) {
-  const descParsed = useUserDescription(description)
-
   return (
     <>
-      {username.length > 0 && (
+      {username.length && (
         <div
           className={`
               bg-gray-200 dark:bg-gray-700 p-4 rounded-lg my-6 sm:my-8 md:my-12 transition-shadow hover:shadow-md removeBlueHighlight ${customCardClasses}
@@ -47,8 +32,9 @@ export default function BaseCard({
               </div>
               <div className='w-full'>
                 <div
-                  className={`flex justify-between items-center ${!descParsed.length > 5 && 'h-full'
-                    }`}
+                  className={`flex justify-between items-center ${
+                    description.length < 5 && 'h-full'
+                  }`}
                 >
                   <h1
                     className={`font-semibold text-lg text-black dark:text-white ${customUsernameClasses} group-hover:underline`}
@@ -59,8 +45,8 @@ export default function BaseCard({
                     className={`text-xl sm:text-2xl transform hover:scale-110 cursor-pointer ${customUrlIconClasses}`}
                   />
                 </div>
-                {descParsed.length > 5 && (
-                  <p className='text-sm'>{descParsed}</p>
+                {description.length > 5 && (
+                  <p className='text-sm'>{description}</p>
                 )}
               </div>
             </div>

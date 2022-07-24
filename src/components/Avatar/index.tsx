@@ -1,21 +1,45 @@
-import { useAvatar } from '../../hooks/useAvatar'
 import { userConfig } from '../../apiData/userConfig'
 import Loader from '../Loader'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
-const avatarUrl = userConfig.avatar
 const altUsernameImg = `${userConfig.username}`
 
-export default function Avatar() {
+export const useAvatar = ({
+  avatarUrl,
+  defaultImg = 'https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI'
+}: {
+  avatarUrl?: string
+  defaultImg?: string
+}) => {
+  const [isLoading, setIsLoading] = useState(true)
+  const [isErrorAvatarUrl, setIsErrorAvatarUrl] = useState(false)
+  const [avatarFetched, setAvatarFetched] = useState('')
+
+  useEffect(() => {
+    setIsLoading(false)
+    setIsErrorAvatarUrl(!avatarUrl)
+    setAvatarFetched(!avatarUrl ? defaultImg : avatarUrl)
+  }, [])
+
+  return {
+    isLoading,
+    isErrorAvatarUrl,
+    avatarFetched
+  }
+}
+
+export default function Avatar({ avatar }: { avatar?: string }) {
+  const [username, setUsername] = useState<string>(`${userConfig.firstName} ${userConfig.lastName}`)
   const { isLoading, isErrorAvatarUrl, avatarFetched } = useAvatar({
-    avatarUrl
+    avatarUrl: avatar
   })
 
-  const fullName = `${userConfig.firstName} ${userConfig.lastName}`
-
-  if (fullName.length > 30) {
-    return userConfig.username
-  }
+  useEffect(() => {
+    if (username.length > 30) {
+      setUsername(userConfig.username)
+    }
+  }, [])
 
   return (
     <section className='py-8 flex flex-col md:max-w-2xl md:mx-auto'>
@@ -40,7 +64,7 @@ export default function Avatar() {
         className='inline-block w-auto mx-auto mt-6 text-2xl font-semibold text-center border-b-4 border-green-500 md:text-3xl'
         title={userConfig.username}
       >
-        {fullName}
+        {username}
       </h1>
     </section>
   )
