@@ -12,7 +12,7 @@ export default function Header({ username }: { username?: string }) {
   return (
     <nav className='flex items-center bg-gray-100 dark:bg-gray-800 text-black dark:text-white justify-between py-5 px-0 mx-auto w-60 mb:w-80 sm:w-full'>
       <Link href='/dashboard'>
-        <a className='text-base md:text-lg font-medium cursor-pointer transition-opacity flex items-center gap-x-2'>
+        <a className='text-base md:text-lg font-medium cursor-pointer transition-opacity flex items-center gap-x-2 select-none'>
           <Img
             src='/assets/linktree.svg'
             alt='Linktry Logo'
