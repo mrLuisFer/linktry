@@ -6,7 +6,9 @@ import Header from '~/components/Header'
 import prisma from '~/lib/prisma'
 import { HiPlus } from 'react-icons/hi'
 import { useState } from 'react'
+import { AiOutlineClear } from 'react-icons/ai'
 import axios from 'axios'
+import FieldItem from './FieldItem'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await unstable_getServerSession(context.req, context.res, authOptions)
@@ -50,31 +52,30 @@ const Dashboard: NextPage = () => {
   const [url, setUrl] = useState<string>('')
   const [description, setDescription] = useState<string>('')
 
-  const [isNameError, setIsNameError] = useState<boolean>(false)
-  const [isUrlError, setIsUrlError] = useState<boolean>(false)
-  const [isDescError, setIsDescError] = useState<boolean>(false)
+  const [isNameError, setIsNameError] = useState<boolean>(true)
+  const [isUrlError, setIsUrlError] = useState<boolean>(true)
+  const [isDescError, setIsDescError] = useState<boolean>(true)
 
   const { data } = useSession()
 
+  const clearFields = () => {
+    setUsername('')
+    setUrl('')
+    setDescription('')
+  }
+
   const handleAddClientFields = async () => {
-    if (!username) {
-      setIsNameError(true)
-    }
-
-    if (!url) {
-      setIsUrlError(true)
-    }
-
-    if (!description) {
-      setIsDescError(true)
-    }
-
-    if (!isNameError && !isUrlError && !isDescError) {
+    if (username.length > 5 && url.length > 5 && description.length > 10) {
       setIsNameError(false)
       setIsUrlError(false)
       setIsDescError(false)
       setFields((prevFields) => [...prevFields, { username, url, description }])
     }
+
+    setIsNameError(true)
+    setIsUrlError(true)
+    setIsDescError(true)
+    clearFields()
   }
 
   const handleSubmitFields = (e: any) => {
@@ -92,16 +93,14 @@ const Dashboard: NextPage = () => {
   }
 
   return (
-    <section className='py-1 px-24 bg-gray-100 dark:bg-gray-800 min-h-screen'>
+    <section className='pt-1 pb-6 px-24 bg-gray-100 dark:bg-gray-800 min-h-screen'>
       <Header username={data!.user!.name!} />
       <section className='dark:text-white'>
-        {fields.map((field) => (
-          <div key={field.url}>
-            <p>{field.username}</p>
-            <p>{field.url}</p>
-            <p>{field.description}</p>
-          </div>
-        ))}
+        <div className='py-2 px-2 bg-slate-200 dark:bg-slate-900 rounded-xl transition-all shadow-sm hover:shadow-md mb-10'>
+          {fields.map((field) => (
+            <FieldItem key={field.url} username={field.username} url={field.url} description={field.description} />
+          ))}
+        </div>
         <div className='flex justify-center mb-8'>
           <form action='' className='flex flex-col gap-4' onSubmit={(e) => handleSubmitFields(e)}>
             <div className='flex items-center gap-4'>
@@ -141,16 +140,26 @@ const Dashboard: NextPage = () => {
                 className={`${inputStyles} h-40 resize-none`}
               />
             </label>
-            <button
-              type='submit'
-              className='py-3 px-8 rounded-md bg-blue-600 w-fit text-base font-medium transform active:scale-95 text-white'
-            >
-              Save
-            </button>
+            <div className='flex items-center gap-4'>
+              <button
+                type='submit'
+                className='py-3 px-8 rounded-md bg-gradient-to-tr transition-all from-blue-700 to-blue-600 w-fit text-base font-medium transform active:scale-95 text-white select-none'
+              >
+                Save
+              </button>
+              <button
+                type='button'
+                className='p-4 transition-all bg-slate-900 hover:bg-gradient-to-br hover:from-slate-800 hover:to-slate-900 border-[1px] text-white border-slate-900 rounded-xl transform active:scale-95 text-base'
+                title='Clear inputs'
+                onClick={() => clearFields()}
+              >
+                <AiOutlineClear />
+              </button>
+            </div>
           </form>
         </div>
         <div
-          className='flex justify-center items-center bg-gray-200 dark:bg-gray-900 text-lg py-4 transition-all rounded-lg shadow-sm hover:shadow-md w-9/12 mx-auto transform active:scale-95'
+          className='flex justify-center items-center bg-gray-200 dark:bg-gray-900 text-lg py-4 transition-all rounded-lg shadow-sm hover:shadow-md w-9/12 mx-auto transform active:scale-95 select-none'
           onClick={handleAddClientFields}
         >
           <HiPlus />
