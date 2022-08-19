@@ -5,7 +5,7 @@ import { GetServerSideProps, NextPage } from 'next'
 import Header from '~/components/Header'
 import prisma from '~/lib/prisma'
 import { HiPlus } from 'react-icons/hi'
-import { MouseEvent, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AiOutlineClear } from 'react-icons/ai'
 import axios from 'axios'
 import FieldItem from '~/components/dashboard/FieldItem'
@@ -51,6 +51,12 @@ interface Field {
 type Icon = '' | 'github' | 'facebook'
 const iconsArr: Icon[] = ['github', 'facebook']
 
+const inputStyles: string =
+  'py-2 px-4 rounded-lg bg-gray-200 dark:bg-gray-900 transition-all opacity-80 focus:opacity-100 focus:shadow-sm'
+const labelStyles: string = 'flex flex-col'
+const commonFieldActionStyle: string =
+  'bg-gray-200 dark:bg-gray-600 flex justify-center items-center gap-1 text-lg px-3 py-2 transition-all rounded-lg transform active:scale-95 select-none hover:shadow-sm dark:hover:brightness-[1.1] opacity-95 hover:opacity-1'
+
 const Dashboard: NextPage = () => {
   const [fields, setFields] = useState<Field[]>([])
   const [username, setUsername] = useState<string>('')
@@ -58,18 +64,7 @@ const Dashboard: NextPage = () => {
   const [description, setDescription] = useState<string>('')
   const [icon, setIcon] = useState<Icon>('')
 
-  const [isNameError, setIsNameError] = useState<boolean>(false)
-  const [isUrlError, setIsUrlError] = useState<boolean>(false)
-  const [isDescError, setIsDescError] = useState<boolean>(false)
-
   const { data } = useSession()
-
-  const inputStyles: string =
-    'py-2 px-4 rounded-lg bg-gray-200 dark:bg-gray-900 transition-all opacity-80 focus:opacity-100 focus:shadow-sm'
-  const labelStyles: string = 'flex flex-col'
-  const commonFieldActionStyle: string =
-    'bg-gradient-to-tr from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-900 flex justify-center items-center gap-1 text-lg px-3 py-2 transition-all rounded-lg transform active:scale-95 select-none hover:shadow-sm dark:hover:brightness-[1.1]'
-  const errorInputHelperStyles: string = 'text-red-500 hover:text-red-600 text-sm mt-1 inline w-fit'
 
   const clearFields = () => {
     setUsername('')
@@ -85,16 +80,9 @@ const Dashboard: NextPage = () => {
 
   const handleAddClientFields = async () => {
     if (isValidInputs()) {
-      setIsNameError(false)
-      setIsUrlError(false)
-      setIsDescError(false)
       setFields((prevFields) => [...prevFields, { clientId: uuid(), username, url, description }])
+      clearFields()
     }
-
-    setIsNameError(true)
-    setIsUrlError(true)
-    setIsDescError(true)
-    clearFields()
   }
 
   const handleSendData = async () => {
@@ -108,10 +96,10 @@ const Dashboard: NextPage = () => {
     console.log(res)
   }
 
-  const handleSubmitFields = (e: any) => {
+  const handleSubmitFields = async (e: any) => {
     e.preventDefault()
     console.log(fields)
-    handleSendData()
+    await handleSendData()
   }
 
   const handleDeleteField = (id: string) => {
@@ -124,7 +112,7 @@ const Dashboard: NextPage = () => {
   }
 
   if (!data) {
-    return <div>Not session</div>
+    return <NotSessionMsg />
   }
 
   return (
@@ -141,15 +129,21 @@ const Dashboard: NextPage = () => {
           >
             {fields.length ? (
               fields.map((field) => (
-                <FieldItem
-                  key={field.url}
-                  id={field.clientId}
-                  username={field.username}
-                  url={field.url}
-                  description={field.description}
-                  editFunc={() => handleEditField(field.clientId)}
-                  deleteFunc={() => handleDeleteField(field.clientId)}
-                />
+                <>
+                  <div className='flex justify-between px-2 py-4'>
+                    <h3>List...</h3>
+                    <p>clear</p>
+                  </div>
+                  <FieldItem
+                    key={field.url}
+                    id={field.clientId}
+                    username={field.username}
+                    url={field.url}
+                    description={field.description}
+                    editFunc={() => handleEditField(field.clientId)}
+                    deleteFunc={() => handleDeleteField(field.clientId)}
+                  />
+                </>
               ))
             ) : (
               <div className='flex justify-center'>
@@ -171,8 +165,8 @@ const Dashboard: NextPage = () => {
                   id='username'
                   placeholder='username'
                   className={inputStyles}
+                  required
                 />
-                {isNameError && <p className={errorInputHelperStyles}>Error</p>}
               </label>
               <label htmlFor='url' className={labelStyles}>
                 Url:
@@ -184,8 +178,8 @@ const Dashboard: NextPage = () => {
                   id='url'
                   placeholder='url'
                   className={inputStyles}
+                  required
                 />
-                {isUrlError && <p className={errorInputHelperStyles}>Error</p>}
               </label>
             </div>
             <label htmlFor='description' className={labelStyles}>
@@ -197,8 +191,8 @@ const Dashboard: NextPage = () => {
                 onChange={(e) => setDescription(e.target.value)}
                 id='description'
                 className={`${inputStyles} h-40 resize-none`}
+                required
               />
-              {isDescError && <p className={errorInputHelperStyles}>Error</p>}
             </label>
             <label htmlFor='icons'>
               <span className='text-sm block'>Select an Icon:</span>
@@ -212,7 +206,7 @@ const Dashboard: NextPage = () => {
             </label>
             <div className='flex items-center justify-between gap-4'>
               <div className='flex items-center gap-4'>
-                <button className={commonFieldActionStyle} onClick={handleAddClientFields}>
+                <button type='button' className={commonFieldActionStyle} onClick={handleAddClientFields}>
                   <HiPlus />
                   Add one
                 </button>
@@ -238,6 +232,10 @@ const Dashboard: NextPage = () => {
       </section>
     </section>
   )
+}
+
+function NotSessionMsg() {
+  return <div>Not session</div>
 }
 
 export default Dashboard
