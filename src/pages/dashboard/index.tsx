@@ -5,11 +5,12 @@ import { GetServerSideProps, NextPage } from 'next'
 import Header from '~/components/Header'
 import prisma from '~/lib/prisma'
 import { HiPlus } from 'react-icons/hi'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { AiOutlineClear } from 'react-icons/ai'
 import axios from 'axios'
 import FieldItem from '~/components/dashboard/FieldItem'
 import { v4 as uuid } from 'uuid'
+import { Icon, Field } from '~/components/dashboard/dashboardTypes'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await unstable_getServerSession(context.req, context.res, authOptions)
@@ -41,14 +42,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return { props: {} }
 }
 
-interface Field {
-  username: string
-  url: string
-  description: string
-  clientId: string
-}
-
-type Icon = '' | 'github' | 'facebook'
 const iconsArr: Icon[] = ['github', 'facebook']
 
 const inputStyles: string =
@@ -80,7 +73,7 @@ const Dashboard: NextPage = () => {
 
   const handleAddClientFields = async () => {
     if (isValidInputs()) {
-      setFields((prevFields) => [...prevFields, { clientId: uuid(), username, url, description }])
+      setFields((prevFields) => [...prevFields, { clientId: uuid(), username, url, description, icon }])
       clearFields()
     }
   }
@@ -136,12 +129,13 @@ const Dashboard: NextPage = () => {
                   </div>
                   <FieldItem
                     key={field.url}
-                    id={field.clientId}
+                    clientId={field.clientId}
                     username={field.username}
                     url={field.url}
                     description={field.description}
                     editFunc={() => handleEditField(field.clientId)}
                     deleteFunc={() => handleDeleteField(field.clientId)}
+                    icon={field.icon}
                   />
                 </>
               ))
