@@ -1,12 +1,7 @@
 import Head from 'next/head'
-import About from '../components/About'
-import Avatar from '../components/Avatar'
-import Header from '../components/Header'
-import SocialLinks from '../components/SocialLinks'
-import Footer from '../components/Footer'
-import Layout from '../components/Layout'
+import AvatarSidebar from '../components/home/AvatarSidebar/index'
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <>
       <Head>
@@ -24,13 +19,9 @@ export default function Home() {
           content='My own customized linktree with the links and cards a little more detailed and with more information'
         />
       </Head>
-      <Layout>
-        <Header />
-        <Avatar />
-        <About />
-        <SocialLinks />
-        <Footer />
-      </Layout>
+      <main>
+        <AvatarSidebar />
+      </main>
     </>
   )
 }

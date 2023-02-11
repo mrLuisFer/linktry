@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import ModalsContainer from '../components/ModalsContainer'
 
 export default function Document() {
   return (
@@ -44,7 +43,6 @@ export default function Document() {
         <meta content='index, follow' name='robots' />
       </Head>
       <body>
-        <ModalsContainer />
         <Main />
         <NextScript />
       </body>
