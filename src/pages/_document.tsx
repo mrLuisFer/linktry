@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
-export default function Document() {
+export default function Document(): JSX.Element {
   return (
     <Html lang='en'>
       <Head>
@@ -16,11 +16,7 @@ export default function Document() {
         />
         <meta property='og:site_name' content='mrLuisFer - Custom Linktree' />
         <meta property='og:title' content='mrLuisFer | Linktry' />
-        <meta
-          property='og:image'
-          itemProp='image'
-          content='/favicon.svg'
-        />
+        <meta property='og:image' itemProp='image' content='/favicon.svg' />
         <meta property='og:type' content='website' />
         <meta
           property='og:url'

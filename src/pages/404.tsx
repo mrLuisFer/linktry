@@ -1,3 +1,3 @@
-export default function Error404() {
+export default function Error404(): JSX.Element {
   return <>Custom Error</>
 }
