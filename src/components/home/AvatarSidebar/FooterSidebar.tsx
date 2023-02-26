@@ -34,7 +34,7 @@ export default function FooterSidebar(): JSX.Element {
           }}
         >
           <Link href={item.link}>
-            <a className='text-gray-700 opacity-60 hover:opacity-90 transition'>
+            <a className='text-gray-700 dark:text-gray-500 text-sm opacity-60 hover:opacity-90 transition'>
               {item.label}
             </a>
           </Link>

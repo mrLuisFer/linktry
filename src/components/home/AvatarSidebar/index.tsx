@@ -28,7 +28,7 @@ const quickContactItems: IQuickContactItem[] = [
 
 export default function AvatarSidebar(): JSX.Element {
   return (
-    <div className='bg-white dark:bg-gray-900 min-h-screen w-1/4 text-gray-900 dark:text-slate-100 hover:shadow-inner hover:shadow-gray-100 dark:hover:shadow-gray-900 pl-20 pb-8 transition group grid grid-rows-[100px_1fr_50px]'>
+    <div className='bg-white dark:bg-slate-900 min-h-screen w-auto text-gray-900 dark:text-slate-100 pl-32 pb-8 transition group grid grid-rows-[100px_1fr_50px]'>
       <HeaderSidebar />
       <div className='flex flex-col gap-6 items-start'>
         <motion.div

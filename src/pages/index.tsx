@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import AvatarSidebar from '../components/home/AvatarSidebar/index'
+import { Box } from '@chakra-ui/react'
+import CardsLayout from '../components/home/CardsLayout/index'
 
 export default function Home(): JSX.Element {
   return (
@@ -19,9 +21,10 @@ export default function Home(): JSX.Element {
           content='My own customized linktree with the links and cards a little more detailed and with more information'
         />
       </Head>
-      <main>
+      <Box as='main' className='container grid grid-cols-[500px_1fr]'>
         <AvatarSidebar />
-      </main>
+        <CardsLayout />
+      </Box>
     </>
   )
 }
