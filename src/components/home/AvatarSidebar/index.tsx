@@ -58,7 +58,7 @@ export default function AvatarSidebar(): JSX.Element {
           }}
           className='flex flex-col justify-start gap-4'
         >
-          <h1 className='font-bold text-4xl border-b-2 border-transparent hover:border-gray-800 transition'>
+          <h1 className='font-bold text-4xl border-b-2 border-transparent hover:border-gray-800 dark:hover:border-gray-300 transition'>
             mrLuisFer
           </h1>
           <p className='font-normal opacity-80 hover:opacity-100 transition'>

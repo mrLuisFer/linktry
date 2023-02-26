@@ -9,17 +9,16 @@ interface IBaseCardProps {
   className?: string
   iconImg?: string
   urlBaseDomain?: string
-  withThumbnail?: boolean
 }
 
 export default function BaseCard({
   cardData,
   className = '',
   iconImg = '',
-  urlBaseDomain = '',
-  withThumbnail = true
+  urlBaseDomain = ''
 }: IBaseCardProps): JSX.Element {
   const { setIsOpenModal, setImgSrc } = useImgModalStore()
+  const withThumbnail = cardData.thumbnail.length > 0
 
   const handleExpandImg = (): void => {
     setImgSrc('/assets/avatar.jpg')
@@ -27,28 +26,41 @@ export default function BaseCard({
   }
 
   return (
-    <div
-      className={`transition-all cursor-pointer rounded-[20px] shadow-md hover:shadow-lg w-fit h-fit max-w-[475px] gap-24 border-2 border-gray-200 hover:border-gray-300 flex items-start justify-between ${className} ${
+    <Box
+      className={`transition-all rounded-[20px] shadow-md hover:shadow-lg w-fit h-fit max-w-[475px] border-2 border-gray-200 hover:border-gray-300 flex items-start justify-between ${className} ${
         withThumbnail ? 'p-8' : 'pl-8 pr-14 py-8'
       }`}
     >
-      <div>
-        <div className='hover:scale-105 transition active:scale-95'>
+      <Box
+        as='a'
+        href={cardData.url}
+        target='_blank'
+        rel='noopener noreferrer'
+        className='pr-24 h-full'
+      >
+        <a
+          className='hover:scale-105 transition active:scale-95 block'
+          href={cardData.url}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
           <Image
             src={iconImg}
             width={50}
             height={50}
             alt={`${cardData.type} icon`}
           />
-        </div>
+        </a>
         <h1 className='text-lg font-bold mt-2'>BaseCard</h1>
         <p className='text-sm opacity-60 hover:underline'>
-          <a>{urlBaseDomain}</a>
+          <a href={cardData.url} target='_blank' rel='noopener noreferrer'>
+            {urlBaseDomain}
+          </a>
         </p>
-      </div>
+      </Box>
       {withThumbnail && (
         <div
-          className='select-none hover:scale-105 transition relative group'
+          className='select-none hover:scale-105 transition relative group cursor-all-scroll'
           onClick={handleExpandImg}
         >
           <Image
@@ -71,6 +83,6 @@ export default function BaseCard({
           </div>
         </div>
       )}
-    </div>
+    </Box>
   )
 }

@@ -8,6 +8,38 @@ const data: ICardData[] = [
     title: 'Video 1',
     description: 'Video 1 description',
     thumbnail: 'https://i.ytimg.com/vi/1/hqdefault.jpg'
+  },
+  {
+    id: '1',
+    type: 'instagram',
+    url: 'https://www.youtube.com/watch?v=1',
+    title: 'Video 1',
+    description: 'Video 1 description',
+    thumbnail: 'https://i.ytimg.com/vi/1/hqdefault.jpg'
+  },
+  {
+    id: '1',
+    type: 'instagram',
+    url: 'https://www.youtube.com/watch?v=1',
+    title: 'Video 1',
+    description: 'Video 1 description',
+    thumbnail: 'https://i.ytimg.com/vi/1/hqdefault.jpg'
+  },
+  {
+    id: '1',
+    type: 'instagram',
+    url: 'https://www.youtube.com/watch?v=1',
+    title: 'Video 1',
+    description: 'Video 1 description',
+    thumbnail: 'https://i.ytimg.com/vi/1/hqdefault.jpg'
+  },
+  {
+    id: '1',
+    type: 'instagram',
+    url: 'https://www.youtube.com/watch?v=1',
+    title: 'Video 1',
+    description: 'Video 1 description',
+    thumbnail: 'https://i.ytimg.com/vi/1/hqdefault.jpg'
   }
 ]
 
