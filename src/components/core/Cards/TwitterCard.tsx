@@ -9,7 +9,7 @@ export default function TwitterCard({
   return (
     <BaseCard
       cardData={cardData}
-      className='bg-blue-100'
+      className='bg-cyan-50'
       iconImg='/assets/cards/twitterIcon.svg'
       urlBaseDomain='twitter.com'
     />

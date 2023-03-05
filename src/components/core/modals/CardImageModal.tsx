@@ -30,10 +30,11 @@ export default function CardImageModal(): JSX.Element {
         <Image
           src={imgSrc}
           alt='Image Modal'
-          width={900}
+          width={1200}
           height={800}
           className='rounded-xl hover:shadow-xl select-none z-20 cursor-default'
           draggable={false}
+          loading='lazy'
         />
       </Box>
     </motion.div>
