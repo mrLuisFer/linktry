@@ -4,31 +4,19 @@ import Image from 'next/image'
 import { FaExpandAlt } from 'react-icons/fa'
 import { useImgModalStore } from 'src/store/imgModalStore'
 
-interface IBaseCardProps {
-  cardData: ICardData
-  className?: string
-  iconImg: string
-  urlBaseDomain?: string
-  customThumbnail?: string
-  customDescription?: string
-}
-
 export default function BaseCard({
-  cardData,
-  className = '',
-  iconImg = '',
-  urlBaseDomain = '',
-  customThumbnail,
-  customDescription
-}: IBaseCardProps): JSX.Element {
+  cardData
+}: {
+  cardData: ICardData
+}): JSX.Element {
   const { setIsOpenModal, setImgSrc } = useImgModalStore()
   const withThumbnail =
     cardData.thumbnail != null && cardData?.thumbnail?.length > 0
 
   const handleExpandImg = (): void => {
     setImgSrc(
-      customThumbnail != null
-        ? customThumbnail
+      cardData.customThumbnail != null
+        ? cardData.customThumbnail
         : cardData.thumbnail != null
         ? cardData.thumbnail
         : ''
@@ -38,9 +26,9 @@ export default function BaseCard({
 
   return (
     <Box
-      className={`transition-all rounded-[20px] shadow-sm hover:shadow-lg w-fit h-fit border-2 border-gray-100 hover:border-gray-200 flex items-start justify-between ${className} ${
-        withThumbnail ? 'p-8' : 'pl-8 pr-0 py-8'
-      }`}
+      className={`transition-all rounded-[20px] shadow-sm hover:shadow-lg w-fit h-fit border-2 border-gray-100 hover:border-gray-200 flex items-start justify-between ${
+        cardData.className != null ? cardData.className : ''
+      } ${withThumbnail ? 'p-8' : 'pl-8 pr-0 py-8'}`}
     >
       <Box
         as='a'
@@ -56,7 +44,7 @@ export default function BaseCard({
           rel='noopener noreferrer'
         >
           <Image
-            src={iconImg}
+            src={cardData.iconImg != null ? cardData.iconImg : ''}
             width={40}
             height={40}
             alt={`${cardData.type} icon`}
@@ -65,11 +53,15 @@ export default function BaseCard({
         <h1 className='text-lg font-bold mt-2'>{cardData.title}</h1>
         <p className='text-sm opacity-60 hover:underline text-clip'>
           <a href={cardData.url} target='_blank' rel='noopener noreferrer'>
-            {cardData.customUrl != null ? cardData.customUrl : urlBaseDomain}
+            {cardData.customUrl != null
+              ? cardData.customUrl
+              : cardData.urlBaseDomain}
           </a>
         </p>
         <p className='text-xs text-clip text-gray-500 font-semibold pt-4 hover:text-gray-600 transition inline-block'>
-          {customDescription != null ? customDescription : cardData.description}
+          {cardData.customDescription != null
+            ? cardData.customDescription
+            : cardData.description}
         </p>
       </Box>
       {withThumbnail && (
@@ -80,8 +72,8 @@ export default function BaseCard({
           <div className='relative w-[200px] h-[150px]'>
             <Image
               src={
-                customThumbnail != null
-                  ? customThumbnail
+                cardData.customThumbnail != null
+                  ? cardData.customThumbnail
                   : cardData.thumbnail != null
                   ? cardData.thumbnail
                   : ''

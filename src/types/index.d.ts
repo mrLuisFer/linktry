@@ -1,4 +1,12 @@
-export interface ICardData {
+interface IBaseCardProps {
+  className?: string
+  iconImg?: string
+  urlBaseDomain?: string
+  customThumbnail?: string
+  customDescription?: string
+}
+
+export interface ICardData extends IBaseCardProps {
   id: string
   type: string
   url: string

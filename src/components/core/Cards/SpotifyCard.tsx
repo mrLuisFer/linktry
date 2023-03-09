@@ -1,5 +1,5 @@
 import type { ICardData } from 'src/types'
-import BaseCard from './BaseCard'
+import BaseCardWithProps from './BaseCardWithProps'
 import useSWR from 'swr'
 import SkeletonCard from './SkeletonCard'
 
@@ -10,13 +10,14 @@ export default function SpotifyCard({
   cardData: ICardData
 }): JSX.Element {
   const { data, error, isLoading } = useSWR('/api/spotify', fetcher)
+  if (data?.data?.error != null && data.data.error.status === 401) return <></>
 
   if (error == null || isLoading) return <SkeletonCard />
 
   const spotifyData = data?.data
   const thumbnail = spotifyData?.item?.album?.images[0]?.url ?? null
   return (
-    <BaseCard
+    <BaseCardWithProps
       cardData={cardData}
       className='bg-green-100'
       iconImg='/assets/cards/spotifyIcon.svg'

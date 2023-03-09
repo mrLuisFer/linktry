@@ -27,15 +27,16 @@ export default function CardImageModal(): JSX.Element {
         <IoClose />
       </button>
       <Box ref={imgRef}>
-        <Image
-          src={imgSrc}
-          alt='Image Modal'
-          width={1200}
-          height={800}
-          className='rounded-xl hover:shadow-xl select-none z-20 cursor-default'
-          draggable={false}
-          loading='lazy'
-        />
+        <Box className='relative w-[1200px] h-[800px] lg:w-[1440px] xl:w-[1600px] xl:h-[900px]'>
+          <Image
+            src={imgSrc}
+            alt='Image Modal'
+            className='rounded-xl hover:shadow-xl select-none z-20 cursor-default'
+            draggable={false}
+            loading='lazy'
+            layout='fill'
+          />
+        </Box>
       </Box>
     </motion.div>
   )

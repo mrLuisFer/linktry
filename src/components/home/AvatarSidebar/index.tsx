@@ -3,26 +3,22 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import HeaderSidebar from './HeaderSidebar'
 import FooterSidebar from './FooterSidebar'
+import { HiOutlineMail } from 'react-icons/hi'
 
 const avatarBase =
   'https://images.unsplash.com/photo-1640960543409-dbe56ccc30e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'
 
 export interface IQuickContactItem {
-  icon: string
+  icon: any
   link: string
   label: string
 }
 
 const quickContactItems: IQuickContactItem[] = [
   {
-    icon: 'https://img.icons8.com/ios/50/000000/instagram-new.png',
-    link: 'https://www.instagram.com/mrluisfer/',
-    label: 'Instagram'
-  },
-  {
-    icon: '',
-    link: '',
-    label: 'Email'
+    icon: <HiOutlineMail />,
+    link: 'mailto:mrluisfeer@gmail.com',
+    label: 'mrluisfeer@gmail.com'
   }
 ]
 
@@ -61,14 +57,17 @@ export default function AvatarSidebar(): JSX.Element {
           <h1 className='font-bold text-4xl border-b-2 border-transparent hover:border-gray-800 dark:hover:border-gray-300 transition'>
             mrLuisFer
           </h1>
-          <p className='font-normal opacity-80 hover:opacity-100 transition'>
-            Description.
+          <p className='font-normal opacity-80 hover:opacity-100 transition w-[350px]'>
+            {"I'm"} a <b>Frontend Developer</b> specialized in <b>JavaScript</b>{' '}
+            and <b>TypeScript</b> environment using <b>React.js</b> and tools
+            for Web development. I also like Backend development using{' '}
+            <b>Node.js</b> to create Fullstack applications.
           </p>
           <div className='flex flex-col gap-4'>
             {quickContactItems.map((item) => (
               <motion.span
                 key={item.label}
-                className='transition inline-block w-fit hover:text-blue-500'
+                className='transition inline-block w-fit text-blue-500 hover:text-blue-700'
                 whileHover={{
                   paddingLeft: 8
                 }}
@@ -80,7 +79,13 @@ export default function AvatarSidebar(): JSX.Element {
                 }}
               >
                 <Link href={item.link}>
-                  <a>{item.label}</a>
+                  <a
+                    className='flex items-center gap-2 font-semibold select-none'
+                    draggable={false}
+                  >
+                    {item.icon}
+                    {item.label}
+                  </a>
                 </Link>
               </motion.span>
             ))}
