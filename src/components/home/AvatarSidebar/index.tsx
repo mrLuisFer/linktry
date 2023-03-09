@@ -4,9 +4,7 @@ import { motion } from 'framer-motion'
 import HeaderSidebar from './HeaderSidebar'
 import FooterSidebar from './FooterSidebar'
 import { HiOutlineMail } from 'react-icons/hi'
-
-const avatarBase =
-  'https://images.unsplash.com/photo-1640960543409-dbe56ccc30e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'
+import { TbBrandGithub } from 'react-icons/tb'
 
 export interface IQuickContactItem {
   icon: any
@@ -19,6 +17,11 @@ const quickContactItems: IQuickContactItem[] = [
     icon: <HiOutlineMail />,
     link: 'mailto:mrluisfeer@gmail.com',
     label: 'mrluisfeer@gmail.com'
+  },
+  {
+    icon: <TbBrandGithub />,
+    link: 'https://github.com/mrLuisFer',
+    label: 'github/mrluisfer'
   }
 ]
 
@@ -38,7 +41,7 @@ export default function AvatarSidebar(): JSX.Element {
           className='relative w-56 h-56'
         >
           <Image
-            src={avatarBase}
+            src='/avatar.png'
             alt='Alex Suprun Avatar'
             layout='fill'
             className='rounded-full'
