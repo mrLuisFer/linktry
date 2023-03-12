@@ -1,18 +1,27 @@
 import axios from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> {
   switch (req.method) {
     case 'GET':
-      return getCurrentTrack(req, res)
+      await getCurrentTrack(req, res)
+      break
     case 'POST':
-      return getAccessTokenRes(res)
+      await getAccessTokenRes(res)
+      break
     default:
-      return res.status(405).json({ message: 'Method not allowed' })
+      res.status(405).json({ message: 'Method not allowed' })
+      break
   }
 }
 
-async function getCurrentTrack(req: NextApiRequest, res: NextApiResponse) {
+async function getCurrentTrack(
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> {
   const { data } = await getAccessToken()
 
   const response = await fetch(
@@ -20,7 +29,7 @@ async function getCurrentTrack(req: NextApiRequest, res: NextApiResponse) {
     {
       method: 'GET',
       headers: {
-        Authorization: `Bearer BQDErs11_8MguGBb45TuIGGCwvWnUEYc8jVGFOTLrgdJH_8NkKvtzgRcTDCRXy2NpFmpiyP_Y3ZsS5LGnE5wnHKcp3JC9IYkeMyurj0t-jLuv9l_2Xh_uoXmPv1xNT8001E1RU-aFiy6Bh-GKMi4WGr3M28YUyeOUW4Nhb3bolGcb1cwE37fWp05vLQaaL4dSqiDZDbJxsllySS99924qVIFsnBZJ_BRkmAmQyzbM9DmF_qbMV65rEpOuP-KfMgFw-4bb7QZb2R6TdEOfMuuG0Pe8wSzxVP_hJcI1SZJNdqJqvoSEm1cVWb6SNg`,
+        Authorization: `Bearer ${data.access_token}`,
         'Content-Type': 'application/json'
       }
     }
@@ -28,7 +37,7 @@ async function getCurrentTrack(req: NextApiRequest, res: NextApiResponse) {
   const dataResponse = await response.json()
   console.log(dataResponse)
 
-  return res.status(200).json({
+  res.status(200).json({
     message: 'Success',
     data: dataResponse
   })
