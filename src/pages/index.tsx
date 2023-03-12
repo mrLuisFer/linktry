@@ -2,6 +2,7 @@ import Head from 'next/head'
 import AvatarSidebar from '../components/home/AvatarSidebar/index'
 import { Box } from '@chakra-ui/react'
 import CardsLayout from '../components/home/CardsLayout/index'
+import MobileScrollAlert from 'src/components/home/MobileScrollAlert'
 
 export default function Home(): JSX.Element {
   return (
@@ -26,6 +27,7 @@ export default function Home(): JSX.Element {
         <div className='lg:overflow-y-scroll lg:h-screen'>
           <CardsLayout />
         </div>
+        <MobileScrollAlert />
       </Box>
     </>
   )
