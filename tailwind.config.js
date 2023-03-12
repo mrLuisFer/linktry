@@ -22,7 +22,7 @@ module.exports = {
         linkedinColor: 'var(--linkedin-color)',
         githubColor: 'var(--github-color)',
         behanceColor: 'var(--behance-color)'
-      },
+      }
     }
   },
   variants: {
@@ -30,5 +30,5 @@ module.exports = {
       brightness: ['hover', 'focus']
     }
   },
-  plugins: []
+  plugins: [require('daisyui')]
 }

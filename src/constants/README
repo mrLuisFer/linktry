@@ -1,0 +1,9 @@
+# About Api
+
+the api folder works as if its name says it an api that gives us information that we can use in different components to show information
+
+It is adapted to be as reusable as possible considering that different properties can be added which we can use.
+
+Obviously this can be improved and made more scalable, but we must check that it works correctly in case there is a change
+
+And if you are going to use it, don't worry, just change the information to yours and let the rest do their magic :D
