@@ -13,7 +13,7 @@ const data: ICardData[] = [
     title: 'Twitter',
     thumbnail: '/assets/thumbnails/twitter.png',
     customUrl: 'twitter.com/_mrLuisFer',
-    className: 'bg-[rgba(0,172,238,0.2)]',
+    className: 'bg-[rgba(0,172,238,0.2)] dark:text-white',
     iconImg: '/assets/cards/twitterIcon.svg',
     urlBaseDomain: 'twitter.com',
     description: 'Opinions and random things'
@@ -53,7 +53,8 @@ const data: ICardData[] = [
     thumbnail: '/assets/thumbnails/github.png',
     customUrl: 'github.com/mrLuisFer',
     description: '71 public repositories',
-    className: 'bg-[rgba(0,0,0,0.20)] hover:bg-[rgba(0,0,0,0.1)] transition',
+    className:
+      'bg-[rgba(0,0,0,0.20)] hover:bg-[rgba(0,0,0,0.1)] transition dark:text-white',
     iconImg: '/assets/cards/githubIcon.svg',
     urlBaseDomain: 'github.com'
   },
@@ -83,7 +84,7 @@ const data: ICardData[] = [
     thumbnail: '/assets/thumbnails/dribbble.jpg',
     description: 'Image by Med Badr Chemmaoui ',
     customUrl: 'dribbble.com/mrLuisfer',
-    className: 'bg-[rgba(234,76,137,0.20)]',
+    className: 'bg-[rgba(234,76,137,0.20)] dark:text-white',
     iconImg: '/assets/cards/dribbleIcon.svg'
   },
   {

@@ -23,7 +23,7 @@ export default function CardImageModal(): JSX.Element {
 
   return (
     <motion.div className='absolute inset-0 h-screen w-screen bg-[#00000035] z-10 flex items-center justify-center cursor-pointer backdrop-blur-sm'>
-      <button className='absolute text-4xl top-10 right-20 border-2 rounded-xl text-black hover:text-white hover:bg-slate-900 border-gray-900 transition hover:scale-105 active:scale-95'>
+      <button className='absolute text-4xl top-10 right-20 border-2 rounded-xl text-black dark:text-gray-300 hover:text-white hover:bg-slate-900 dark:hover:bg-zinc-900 border-gray-900 dark:border-gray-400 transition hover:scale-105 active:scale-95'>
         <IoClose />
       </button>
       <Box ref={imgRef}>

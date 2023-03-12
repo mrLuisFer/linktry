@@ -39,7 +39,7 @@ export default function BaseCard({
   return (
     <CardMotion>
       <Box
-        className={`transition-all rounded-[20px] shadow-sm hover:shadow-lg w-fit h-fit max-h-fit border-2 border-gray-100 hover:border-gray-200 flex items-start justify-between ${
+        className={`transition-all rounded-[20px] shadow-sm hover:shadow-lg w-fit h-fit max-h-fit border-2 border-gray-100 hover:border-gray-200 dark:border-slate-700 dark:hover:border-gray-600 flex items-start justify-between ${
           cardData.className != null ? cardData.className : ''
         } ${withThumbnail ? 'p-8' : 'pl-8 pr-0 py-8'}`}
       >

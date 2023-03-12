@@ -8,7 +8,7 @@ export default function TitleCategory({
 }): JSX.Element {
   return (
     <motion.div
-      className='flex items-center justify-start mb-4 text-left'
+      className='flex justify-start mb-4 text-left flex-col items-start'
       initial={{
         opacity: 0,
         y: -20
@@ -22,9 +22,10 @@ export default function TitleCategory({
         ease: 'easeInOut'
       }}
     >
-      <h2 className='text-xl font-bold capitalize opacity-90 hover:opacity-100 transition active:scale-95 select-none'>
+      <h2 className='text-xl font-bold capitalize opacity-90 hover:opacity-100 transition select-none dark:text-gray-200 dark:hover:text-gray-100'>
         {children}
       </h2>
+      <div className='w-full h-[2px] bg-slate-900 opacity-5 rounded-xl'></div>
     </motion.div>
   )
 }

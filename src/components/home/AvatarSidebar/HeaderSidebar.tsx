@@ -20,7 +20,7 @@ function HeaderBtn({
   return (
     <CustomTooltip title={title}>
       <button
-        className={`bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 hover:dark:bg-gray-700 text-black dark:text-gray-100 w-fit h-fit rounded-lg p-2 hover:shadow-sm text-lg cursor-pointer hover:brightness-95 transition focus:outline-none text-center ${className}`}
+        className={`bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 hover:dark:bg-gray-700 text-black dark:text-gray-100 w-fit h-fit rounded-lg p-2 hover:shadow-sm text-lg cursor-pointer hover:brightness-95 transition focus:outline-none text-center active:scale-95 ${className}`}
         title={title}
         onClick={onClick}
         data-tooltip-target='tooltip-default'
