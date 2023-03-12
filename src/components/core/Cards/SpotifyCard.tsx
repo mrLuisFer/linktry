@@ -3,7 +3,10 @@ import BaseCardWithProps from './BaseCardWithProps'
 import useSWR from 'swr'
 import SkeletonCard from './SkeletonCard'
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json())
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+const fetcher = (...args: RequestInfo): any =>
+  fetch(args as unknown as RequestInfo).then((res): any => res.json())
 export default function SpotifyCard({
   cardData
 }: {
