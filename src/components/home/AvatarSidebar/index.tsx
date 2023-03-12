@@ -27,9 +27,9 @@ const quickContactItems: IQuickContactItem[] = [
 
 export default function AvatarSidebar(): JSX.Element {
   return (
-    <div className='bg-white dark:bg-zinc-800 min-h-screen w-auto text-gray-900 dark:text-slate-100 pl-32 pb-8 transition group grid grid-rows-[100px_1fr_50px]'>
+    <div className='bg-white dark:bg-zinc-800 min-h-screen w-auto text-gray-900 dark:text-slate-100 px-6 lg:pl-32 lg:pb-8 transition group grid grid-rows-[100px_1fr_50px]'>
       <HeaderSidebar />
-      <div className='flex flex-col gap-6 items-start'>
+      <div className='flex flex-col gap-6 items-center lg:items-start'>
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -57,7 +57,7 @@ export default function AvatarSidebar(): JSX.Element {
           }}
           className='flex flex-col justify-start gap-4'
         >
-          <h1 className='font-bold text-4xl border-b-2 border-transparent hover:border-gray-800 dark:hover:border-gray-300 transition'>
+          <h1 className='font-bold text-4xl border-b-2 border-transparent hover:border-gray-800 dark:hover:border-gray-300 transition w-fit'>
             mrLuisFer
           </h1>
           <p className='font-normal opacity-80 hover:opacity-100 transition w-[350px]'>

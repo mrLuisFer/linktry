@@ -21,9 +21,9 @@ export default function Home(): JSX.Element {
           content='My own customized linktree with the links and cards a little more detailed and with more information'
         />
       </Head>
-      <Box as='main' className='grid grid-cols-[500px_1fr]'>
+      <Box as='main' className='flex flex-col lg:grid lg:grid-cols-[500px_1fr]'>
         <AvatarSidebar />
-        <div className='overflow-y-scroll h-screen'>
+        <div className='lg:overflow-y-scroll lg:h-screen'>
           <CardsLayout />
         </div>
       </Box>

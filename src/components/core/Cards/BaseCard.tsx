@@ -39,16 +39,16 @@ export default function BaseCard({
   return (
     <CardMotion>
       <Box
-        className={`transition-all rounded-[20px] shadow-sm hover:shadow-lg w-fit h-fit max-h-fit border-2 border-gray-100 hover:border-gray-200 dark:border-slate-700 dark:hover:border-gray-600 flex items-start justify-between ${
+        className={`transition-all rounded-[20px] shadow-sm hover:shadow-lg w-fit h-fit max-h-fit border-2 border-gray-100 hover:border-gray-200 dark:border-slate-700 dark:hover:border-gray-600 flex flex-col md:flex-row items-start justify-between gap-4 md:gap-0 ${
           cardData.className != null ? cardData.className : ''
-        } ${withThumbnail ? 'p-8' : 'pl-8 pr-0 py-8'}`}
+        } ${withThumbnail ? 'p-6 md:p-8' : 'px-6 md:pl-8 md:pr-0 py-8'}`}
       >
         <Box
           as='a'
           href={cardData.url}
           target='_blank'
           rel='noopener noreferrer'
-          className='pr-24 h-full'
+          className='pr-6 md:pr-24 h-full'
         >
           <a
             className='hover:scale-105 transition active:scale-95 block'
