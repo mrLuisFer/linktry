@@ -23,7 +23,9 @@ export default function Home(): JSX.Element {
       </Head>
       <Box as='main' className='grid grid-cols-[500px_1fr]'>
         <AvatarSidebar />
-        <CardsLayout />
+        <div className='overflow-y-scroll h-screen'>
+          <CardsLayout />
+        </div>
       </Box>
     </>
   )

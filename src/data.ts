@@ -1,8 +1,13 @@
 import type { ICardData } from './types'
+import { v4 as uuidv4 } from 'uuid'
+
+const generateId = (): string => {
+  return uuidv4()
+}
 
 const data: ICardData[] = [
   {
-    id: '1',
+    id: generateId(),
     type: 'twitter',
     url: 'https://twitter.com/_mrLuisFer',
     title: 'Twitter',
@@ -14,7 +19,7 @@ const data: ICardData[] = [
     description: 'Opinions and random things'
   },
   {
-    id: '2',
+    id: generateId(),
     type: 'instagram',
     url: 'https://www.instagram.com/mrluisfer_/',
     title: 'Personal Photos',
@@ -24,7 +29,13 @@ const data: ICardData[] = [
     iconImg: '/assets/cards/instagramIcon.svg'
   },
   {
-    id: '3',
+    id: '1634701418354421761',
+    type: 'tweet',
+    url: '',
+    title: 'Twitter'
+  },
+  {
+    id: generateId(),
     type: 'linkedin',
     url: 'https://www.linkedin.com/in/mrluisfer/',
     title: 'LinkedIn',
@@ -35,17 +46,7 @@ const data: ICardData[] = [
     urlBaseDomain: 'linkedIn.com/mrluisfer'
   },
   {
-    id: '4',
-    type: 'behance',
-    url: 'https://www.behance.net/luisalvarez28',
-    title: 'Behance Portfolio',
-    description: 'Custom design projects',
-    className: 'bg-blue-50',
-    iconImg: '/assets/cards/behanceIcon.svg',
-    urlBaseDomain: 'behance.com'
-  },
-  {
-    id: '5',
+    id: generateId(),
     type: 'github',
     url: 'https://github.com/mrLuisFer',
     title: 'GitHub',
@@ -57,7 +58,17 @@ const data: ICardData[] = [
     urlBaseDomain: 'github.com'
   },
   {
-    id: '6',
+    id: generateId(),
+    type: 'behance',
+    url: 'https://www.behance.net/luisalvarez28',
+    title: 'Behance Portfolio',
+    description: 'Custom design projects',
+    className: 'bg-blue-50',
+    iconImg: '/assets/cards/behanceIcon.svg',
+    urlBaseDomain: 'behance.com'
+  },
+  {
+    id: generateId(),
     type: 'spotify',
     url: 'https://open.spotify.com/user/lolesuncrak',
     title: 'Spotify',
@@ -65,7 +76,7 @@ const data: ICardData[] = [
     customUrl: 'open.spotify/lolesuncrak'
   },
   {
-    id: '5',
+    id: generateId(),
     type: 'dribbble',
     url: 'https://dribbble.com/mrLuisfer',
     title: 'Dribbble',
@@ -76,7 +87,7 @@ const data: ICardData[] = [
     iconImg: '/assets/cards/dribbleIcon.svg'
   },
   {
-    id: '7',
+    id: generateId(),
     type: 'twitch',
     url: 'https://www.twitch.tv/mrluisfer',
     title: 'Twitch',
@@ -86,7 +97,7 @@ const data: ICardData[] = [
     className: 'bg-purple-200'
   },
   {
-    id: '8',
+    id: generateId(),
     type: 'portfolio',
     url: 'https://mrluisfer.vercel.app/',
     title: 'Professional Portfolio',
@@ -94,6 +105,34 @@ const data: ICardData[] = [
     className: 'bg-cyan-50',
     description: 'Personal portfolio made with React and Nextjs',
     thumbnail: '/assets/thumbnails/portfolio.png'
+  },
+  {
+    id: '1599617558205804545',
+    type: 'tweet',
+    url: '',
+    title: 'Twitter'
+  },
+
+  {
+    id: generateId(),
+    type: 'devto',
+    url: 'https://dev.to/mrluisfer',
+    title: 'Dev.to Posts',
+    iconImg: '/assets/cards/devtoIcon.svg',
+    className: 'bg-gray-800 text-white',
+    description: 'Posts about web development'
+  },
+  {
+    id: generateId(),
+    type: 'instagramCard',
+    url: 'https://www.instagram.com/p/CkWo1xUrbFc/',
+    title: 'Personal Photos'
+  },
+  {
+    id: generateId(),
+    type: 'youtube',
+    url: 'https://www.youtube.com/watch?v=rR4n-0KYeKQ',
+    title: 'how we write/review code in big tech companies'
   }
 ]
 
