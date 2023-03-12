@@ -29,7 +29,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-  overflow: hidden;
+  overflow: auto;
+}
+@media (min-width: 800px) {
+  body {
+    overflow: hidden;
+  }
 }
 
 .userNoSelect {
