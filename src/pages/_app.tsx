@@ -1,15 +1,12 @@
 import type { AppProps } from 'next/app'
 import '../styles/global.css'
-import { ChakraProvider } from '@chakra-ui/react'
-import CardImageModal from 'src/components/core/modals/CardImageModal'
-import { useImgModalStore } from 'src/store/imgModalStore'
+import '@radix-ui/themes/styles.css'
+import { Theme } from '@radix-ui/themes'
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  const { isOpenModal } = useImgModalStore()
   return (
-    <ChakraProvider>
+    <Theme radius='medium'>
       <Component {...pageProps} />
-      {isOpenModal && <CardImageModal />}
-    </ChakraProvider>
+    </Theme>
   )
 }

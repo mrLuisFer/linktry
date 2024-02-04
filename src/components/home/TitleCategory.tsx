@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { motion } from 'framer-motion'
+import { Heading } from '@radix-ui/themes'
 
 export default function TitleCategory({
   children,
@@ -24,12 +25,9 @@ export default function TitleCategory({
         ease: 'easeInOut'
       }}
     >
-      <h2
-        className='text-xl font-bold capitalize opacity-90 hover:opacity-100 transition select-none dark:text-gray-200 dark:hover:text-gray-100'
-        id={id}
-      >
+      <Heading as='h2' id={id} color='blue'>
         {children}
-      </h2>
+      </Heading>
       <div className='w-full h-[2px] bg-slate-900 opacity-5 rounded-xl'></div>
     </motion.div>
   )
