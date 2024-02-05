@@ -1,5 +1,5 @@
 import { YouTubeEmbed } from 'react-social-media-embed'
-import CardMotion from '../CardMotion'
+import CardMotion from '../Cards/CardMotion'
 import { useBreakpoints } from 'src/hooks/useBreakpoints'
 
 export default function YoutubeCard({ url }: { url: string }): JSX.Element {

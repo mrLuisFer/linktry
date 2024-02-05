@@ -32,7 +32,7 @@ export default function CardContent({
           />
         </Text>
       ) : null}
-      <Heading as='h4' className='text-lg font-bold mt-2 max-w-[200px]'>
+      <Heading as='h4' className='text-lg font-bold mt-2 max-w-[200px] '>
         {cardData.title}
       </Heading>
       <Flex direction='column' wrap='wrap' gap='2'>

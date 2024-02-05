@@ -4,7 +4,6 @@ import SpotifyCard from 'src/components/core/Cards/SpotifyCard'
 import InstagramCard from 'src/components/core/Embeds/Instagram'
 import YoutubeCard from 'src/components/core/Embeds/Youtube'
 import BaseCardWithProps from 'src/components/core/Cards/Base/BaseCardWithProps'
-import { Box } from '@radix-ui/themes'
 
 export default function CardsSelect({
   cardData
@@ -26,9 +25,5 @@ export default function CardsSelect({
     }
   }
 
-  return (
-    <Box>
-      <CardRender />
-    </Box>
-  )
+  return <CardRender />
 }

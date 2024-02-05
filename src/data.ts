@@ -25,14 +25,8 @@ const data: ICardData[] = [
     title: 'Personal Photos',
     customUrl: 'instagram.com/mrluisfer_',
     description: 'Personal account',
-    className: 'bg-pink-50',
+    className: 'bg-pink-50 text-black dark:text-gray-700',
     iconImg: '/assets/cards/instagramIcon.svg'
-  },
-  {
-    id: '1634701418354421761',
-    type: 'tweet',
-    url: '',
-    title: 'Twitter'
   },
   {
     id: generateId(),
@@ -41,7 +35,7 @@ const data: ICardData[] = [
     title: 'LinkedIn',
     thumbnail: '/assets/thumbnails/linkedin.avif',
     description: 'Image by Grabriel Varaljay',
-    className: 'bg-blue-100',
+    className: 'bg-blue-100 dark:text-blue-500',
     iconImg: '/assets/cards/linkedinIcon.svg',
     urlBaseDomain: 'linkedIn.com/mrluisfer'
   },
@@ -53,8 +47,7 @@ const data: ICardData[] = [
     thumbnail: '/assets/thumbnails/github.png',
     customUrl: 'github.com/mrLuisFer',
     description: '71 public repositories',
-    className:
-      'bg-[rgba(0,0,0,0.20)] hover:bg-[rgba(0,0,0,0.1)] transition dark:text-white',
+    className: 'transition dark:text-white',
     iconImg: '/assets/cards/githubIcon.svg',
     urlBaseDomain: 'github.com'
   },
@@ -64,7 +57,7 @@ const data: ICardData[] = [
     url: 'https://www.behance.net/luisalvarez28',
     title: 'Behance Portfolio',
     description: 'Custom design projects',
-    className: 'bg-blue-50',
+    className: 'bg-blue-50 dark:text-blue-600',
     iconImg: '/assets/cards/behanceIcon.svg',
     urlBaseDomain: 'behance.com'
   },
@@ -95,15 +88,15 @@ const data: ICardData[] = [
     thumbnail: '/assets/thumbnails/twitch.png',
     customUrl: 'twitch.tv/mrluisfer',
     iconImg: '/assets/cards/twitchIcon.svg',
-    className: 'bg-purple-200'
+    className: 'bg-purple-200 dark:text-purple-500'
   },
   {
     id: generateId(),
     type: 'portfolio',
     url: 'https://mrluisfer.vercel.app/',
-    title: 'Professional Portfolio',
+    title: 'Personal Portfolio',
     iconImg: '/assets/cards/portfolioIcon.svg',
-    className: 'bg-cyan-50',
+    className: 'bg-cyan-50 dark:text-cyan-600',
     description: 'Personal portfolio made with React and Nextjs',
     thumbnail: '/assets/thumbnails/portfolio.png'
   },
@@ -113,7 +106,6 @@ const data: ICardData[] = [
     url: '',
     title: 'Twitter'
   },
-
   {
     id: generateId(),
     type: 'devto',
@@ -134,6 +126,12 @@ const data: ICardData[] = [
     type: 'youtube',
     url: 'https://www.youtube.com/watch?v=rR4n-0KYeKQ',
     title: 'how we write/review code in big tech companies'
+  },
+  {
+    id: '1634701418354421761',
+    type: 'tweet',
+    url: '',
+    title: 'Twitter'
   }
 ]
 

@@ -1,3 +1,4 @@
+import { Flex } from '@radix-ui/themes'
 import { motion } from 'framer-motion'
 
 export default function CardMotion({
@@ -7,7 +8,6 @@ export default function CardMotion({
 }): JSX.Element {
   return (
     <motion.div
-      className='relative h-fit w-fit basis-auto'
       initial={{
         opacity: 0,
         scale: 0,
@@ -19,7 +19,9 @@ export default function CardMotion({
       transition={{ duration: 0.5 }}
       whileTap={{ scale: 0.95 }}
     >
-      {children}
+      <Flex align='start' justify='between' gap='3' wrap='wrap'>
+        {children}
+      </Flex>
     </motion.div>
   )
 }

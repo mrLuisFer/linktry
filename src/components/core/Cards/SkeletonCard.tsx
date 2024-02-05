@@ -1,5 +1,5 @@
 import { Skeleton } from '@chakra-ui/react'
-import CardMotion from '../CardMotion'
+import CardMotion from './CardMotion'
 
 export default function SkeletonCard(): JSX.Element {
   return (
