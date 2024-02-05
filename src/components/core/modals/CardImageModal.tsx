@@ -2,12 +2,28 @@ import { motion } from 'framer-motion'
 import { useImgModalStore } from 'src/store/imgModalStore'
 import Image from 'next/image'
 import { IoClose } from 'react-icons/io5'
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { Box } from '@chakra-ui/react'
 
 export default function CardImageModal(): JSX.Element {
   const { imgSrc, setIsOpenModal } = useImgModalStore()
   const imgRef = useRef<HTMLDivElement>(null)
+
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent): void => {
+      if (e.key === 'Escape') {
+        setIsOpenModal(false)
+      }
+    },
+    [setIsOpenModal]
+  )
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [handleKeyDown])
 
   useEffect(() => {
     function handleClickOutside(event): void {
@@ -27,7 +43,7 @@ export default function CardImageModal(): JSX.Element {
         <IoClose />
       </button>
       <Box ref={imgRef}>
-        <Box className='relative w-[1200px] h-[800px] lg:w-[1440px] xl:w-[1600px] xl:h-[900px]'>
+        <Box className='relative w-[250px] h-[250px] lg:w-[1000px] lg:h-[700px]'>
           <Image
             src={imgSrc}
             alt='Image Modal'

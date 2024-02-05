@@ -1,33 +1,15 @@
-import Head from 'next/head'
-import AvatarSidebar from '../components/home/AvatarSidebar/index'
-import { Box } from '@chakra-ui/react'
 import CardsLayout from '../components/home/CardsLayout/index'
-import MobileScrollAlert from 'src/components/home/MobileScrollAlert'
+import SEO from 'src/components/SEO'
+import { Box } from '@radix-ui/themes'
+import Sidebar from 'src/components/home/Sidebar'
 
 export default function Home(): JSX.Element {
   return (
     <>
-      <Head>
-        <title>Linktry - mrLuisFer</title>
-        <meta
-          name='description'
-          content='Linktree created using create-react-app'
-        />
-        <meta
-          property='og:description'
-          content='My own customized linktree with the links and cards a little more detailed and with more information'
-        />
-        <meta
-          property='twitter:description'
-          content='My own customized linktree with the links and cards a little more detailed and with more information'
-        />
-      </Head>
-      <Box as='main' className='flex flex-col lg:grid lg:grid-cols-[500px_1fr]'>
-        <AvatarSidebar />
-        <div className='lg:overflow-y-scroll lg:h-screen'>
-          <CardsLayout />
-        </div>
-        <MobileScrollAlert />
+      <SEO />
+      <Box className='flex flex-col lg:grid lg:grid-cols-[500px_1fr]'>
+        <Sidebar />
+        <CardsLayout />
       </Box>
     </>
   )

@@ -1,5 +1,5 @@
 import type { ICardData } from 'src/types'
-import BaseCardWithProps from './BaseCardWithProps'
+import BaseCardWithProps from './Base/BaseCardWithProps'
 import useSWR from 'swr'
 import SkeletonCard from './SkeletonCard'
 

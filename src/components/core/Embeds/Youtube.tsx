@@ -1,9 +1,9 @@
 import { YouTubeEmbed } from 'react-social-media-embed'
 import CardMotion from '../CardMotion'
-import { useMediaQuery } from '@chakra-ui/react'
+import { useBreakpoints } from 'src/hooks/useBreakpoints'
 
 export default function YoutubeCard({ url }: { url: string }): JSX.Element {
-  const [isLargerThanMobile] = useMediaQuery('minWidth: 400px')
+  const { isMobile } = useBreakpoints()
 
   return (
     <CardMotion>
@@ -11,8 +11,8 @@ export default function YoutubeCard({ url }: { url: string }): JSX.Element {
         <div className='flex justify-center bg-base-200'>
           <YouTubeEmbed
             url={url}
-            width={!isLargerThanMobile ? 310 : 600}
-            height={!isLargerThanMobile ? 300 : 350}
+            width={isMobile ? 'auto' : 600}
+            height={350}
           />
         </div>
       </div>
