@@ -1,6 +1,6 @@
 import { TwitterTweetEmbed } from 'react-twitter-embed'
 import SkeletonCard from '../../Cards/SkeletonCard'
-import CardMotion from '../../CardMotion'
+import CardMotion from '../../Cards/CardMotion'
 
 export default function TweetCard({ id }: { id: string }): JSX.Element {
   return (
