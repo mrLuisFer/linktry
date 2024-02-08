@@ -4,12 +4,7 @@ module.exports = {
     es2021: true,
     node: true
   },
-  extends: [
-    'next',
-    'plugin:react/recommended',
-    'standard-with-typescript',
-    'prettier'
-  ],
+  extends: ['next', 'prettier'],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
