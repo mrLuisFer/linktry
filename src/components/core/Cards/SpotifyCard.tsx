@@ -3,8 +3,7 @@ import BaseCardWithProps from './Base/BaseCardWithProps'
 import useSWR from 'swr'
 import SkeletonCard from './SkeletonCard'
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
+// @ts-ignore
 const fetcher = (...args: RequestInfo): any =>
   fetch(args as unknown as RequestInfo).then((res): any => res.json())
 export default function SpotifyCard({
@@ -27,7 +26,6 @@ export default function SpotifyCard({
       urlBaseDomain='spotify.com'
       customThumbnail={thumbnail}
       customDescription={
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         `${spotifyData?.item?.artists[0]?.name} - ${spotifyData?.item?.name}` ??
         null
       }
